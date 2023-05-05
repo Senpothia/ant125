@@ -5,7 +5,7 @@
 #' @param models models possède 4 groupes:LN, RN, LF, RF
 #' @param groupe 4 groupes:LN, RN, LF, RF
 #'
-#' @return a liste of models
+#' @return une liste de modèles LN, RN, LF, LF
 #' @export
 #'
 #' @examples

@@ -13,7 +13,7 @@ estimateurs(models, groupe)
 \item{groupe}{4 groupes:LN, RN, LF, RF}
 }
 \value{
-a liste of models
+une liste de modèles LN, RN, LF, LF
 }
 \description{
 Fourni la liste des fonctions de régression d'un groupe pour un ensemble de modèles

@@ -52,16 +52,16 @@ analyse<-function(){
 
       # Compte rendu
 
-      print_color("-------   RESULTAT D'OPTIMISATION    -----------\n", "red")
-      print_color("\n","red")
-      print_color(paste("Optimisation pour F=125kHz et C=", cap), "red")
-      print_color("pF\n","red")
-      print_color( paste("Jeu de données utilisé: ", env$dataSource), "red")
-      print_color("\n","red")
-      print_color("\n","red")
-      print_color( paste("Nombre de spires estimés: ", as.character(n[1])), "red")
-      print_color("\n","red")
-      print_color("------------------------------------------------\n", "red")
+      insight::print_color("-------   RESULTAT D'OPTIMISATION    -----------\n", "red")
+      insight::print_color("\n","red")
+      insight::print_color(paste("Optimisation pour F=125kHz et C=", cap), "red")
+      insight::print_color("pF\n","red")
+      insight::print_color( paste("Jeu de données utilisé: ", env$dataSource), "red")
+      insight::print_color("\n","red")
+      insight::print_color("\n","red")
+      insight::print_color( paste("Nombre de spires estimés: ", as.character(n[1])), "red")
+      insight::print_color("\n","red")
+      insight::print_color("------------------------------------------------\n", "red")
 
 
       # Estimation en fonction du courant d'antenne
@@ -78,35 +78,35 @@ analyse<-function(){
       Iantenne2 <- as.integer(Iantenne)*1e-3
       message<-cat("Valeur du courant d'antenne choisie: ", Iantenne, "mA", "\n")
 
-      print_color(message, "red")
+      insight::print_color(message, "red")
 
       r<-RforI(Iantenne2)
 
       message<-cat("Résistance estimée: ", as.character(r[1]), "\n")
-      print_color(message, "red")
-      print_color("------------------------------------------------\n", "red")
+      insight::print_color(message, "red")
+      insight::print_color("------------------------------------------------\n", "red")
 
       Rattendue<-as.numeric(r[1])
 
       n<-optimisEst(CS[3], Rattendue, 125, c(60,120))
 
-      print_color( paste("Nombre de spires estimés: ", as.character(n[1])), "red")
-      print_color("\n","red")
-      print_color("------------------------------------------------\n", "red")
+      insight::print_color( paste("Nombre de spires estimés: ", as.character(n[1])), "red")
+      insight::print_color("\n","red")
+      insight::print_color("------------------------------------------------\n", "red")
 
       Lcal<-evalEstimator2(CS[3], 125, as.numeric(n[1]))
 
-      print_color(paste("Inductance antenne: ", Lcal), "red")
-      print_color("\n","red")
-      print_color(paste("Capacité d'accord: ", Cresonnance(Lcal, 125)), "red")
-      print_color("\n","red")
-      print_color("-----------------  FIN DE RAPPORT  ------------\n", "red")
+      insight::print_color(paste("Inductance antenne: ", Lcal), "red")
+      insight::print_color("\n","red")
+      insight::print_color(paste("Capacité d'accord: ", Cresonnance(Lcal, 125)), "red")
+      insight::print_color("\n","red")
+      insight::print_color("-----------------  FIN DE RAPPORT  ------------\n", "red")
 
     }
 
   }
 
-  print_color("FIN", "red")
+  insight::print_color("FIN", "red")
 
 
 }

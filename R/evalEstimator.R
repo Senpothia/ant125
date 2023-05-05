@@ -19,7 +19,7 @@ evalEstimator<-function(estimator, param, interval, titre="", labX="", labY=""){
   y<-interval
   fonction<-parse(text=estimator)
   Y<-eval(fonction)
-  p<-ggplot(data.frame(y,Y), aes(x=y, y=Y)) + geom_line(col="blue") + ggtitle(titre) + labs(x = labX, y = labY)
+  p<-ggplot2:ggplot(data.frame(y,Y), aes(x=y, y=Y)) + geom_line(col="blue") + ggtitle(titre) + labs(x = labX, y = labY)
   print(p)
   return (Y)
 

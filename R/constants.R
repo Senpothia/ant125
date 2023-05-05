@@ -1,5 +1,3 @@
-#---------------------------------------------------------------------------------------------------------
-# Constantes
 
 env<-new.env(parent = emptyenv())
 
@@ -15,83 +13,188 @@ env$Cdv1=39e-12
 env$Cdv2=1.5e-09
 env$c2<-(39e-12*1.5e-9)/(39e-12+1.5e-9)  # Influence pont capacitif
 
-# ---------  GETTERS et SETTERS
 
-# Change reference frequency
-
+#' Set source folder for loading data
+#'
+#' @param name of the source folder as string
+#'
+#' @return nothing
+#' @export
+#'
+#' @examples
+#' setDataSource("folder")
+#'
 setDataSource<-function(source){
-  
+
   env$dataSource<-source
 }
 
+#' Set the reference frequency for estimations. Usely this parameter is set as 125
+#' as 125kHz
+#'
+#' @param freq The reference frequency in kHz
+#'
+#' @return nothing
+#' @export
+#'
+#' @examples setRefFrequency(125)
+#'
 setRefFrequency<-function(freq){
-  
+
   env$F0<-freq
 }
 
+#' Cdv1 setter
+#'
+#' @param c: capacitance of antenna voltage divider. In farad
+#'
+#' @return nothing
+#' @export
+#'
+#' @examples
 setCdv1<-function(c){
-  
+
   env$Cdv1<-c
   updateC2()
-  
+
 }
 
+#' Cdv2 setter
+#'
+#' @param c: capacitance of antenna voltage divider. In farad
+#'
+#' @return nothing
+#' @export
+#'
+#' @examples
 setCdv2<-function(c){
-  
+
   env$Cdv2<-c
   updateC2()
-  
+
 }
 
+#' Voltage of the antenna driver setter
+#'
+#' @param v
+#'
+#' @return nothing
+#' @export
+#'
+#' @examples
+#' setVdd(10)
 setVdd<-function(v){
-  
+
   env$Vdd<-v
-  
+
 }
 
+#' Antenna reference voltage setter
+#'
+#' @param v
+#'
+#' @return nothing
+#' @export
+#'
+#' @examples
+#' setVss(0)
 setVss<-function(v){
-  
+
   env$Vss<-v
-  
+
 }
 
+#' Serial antenna resistance setter
+#'
+#' @param r
+#'
+#' @return nothing
+#' @export
+#'
+#' @examples
+#' setRser(18)
+#'
 setRser<-function(r){
-  
+
   env$Rser<-r
-  
+
 }
 
+#' Serial antenna resistance
+#'
+#' @param r
+#'
+#' @return nothing
+#' @export
+#'
+#' @examples
+#' setRad(9)
+#'
 setRad<-function(r){
-  
+
   env$Rad<-r
-  
+
 }
 
+#' Setter for distance reference for magnetic field estimation
+#'
+#' @param z
+#'
+#' @return nothig
+#' @export
+#'
+#' @examples
 setZ<-function(z){
-  
+
   env$z<-z
-  
+
 }
 
+#' Radius of antenna setter. Use for magnetic field estimation
+#'
+#' @param r
+#'
+#' @return nothing
+#' @export
+#'
+#' @examples
 setR<-function(r){
-  
+
   env$r<-r
-  
+
 }
 
+#' Equivalent capacitance value of the antenna divider voltage
+#'
+#' @return a numeric
+#' @export
+#'
+#' @examples
 updateC2<-function(){
-  
-  env$c2=env$Cdv1*env$Cdv2/(env$Cdv1+env$Cdv2)    
+
+  env$c2=env$Cdv1*env$Cdv2/(env$Cdv1+env$Cdv2)
 }
 
+#' Equivalent capacitance value of the antenna divider voltage getter
+#'
+#' @return a numeric
+#' @export
+#'
+#' @examples
 getC2<-function(){
-  
-  env$c2=env$Cdv1*env$Cdv2/(env$Cdv1+env$Cdv2) 
+
+  env$c2=env$Cdv1*env$Cdv2/(env$Cdv1+env$Cdv2)
   return(env$c2)
 }
 
+#' Summary of the constants use for estimation in the package
+#'
+#' @return
+#' @export
+#'
+#' @examples
 summaryEnv<-function(){
-  
+
   print("--------------- CONSTANTES DE REFERENCES --------------------------------------------")
   print(paste("Fréquence de référence:", env$F0))  # fréquence de référence
   print(paste("Localisation des  données:", env$dataSource))

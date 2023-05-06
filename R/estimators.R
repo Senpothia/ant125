@@ -1,18 +1,19 @@
 
-#' Fourni la liste des fonctions de régression d'un groupe pour un ensemble de modèles
-#'l'appel se fait sur un groupe: LN, RN, LF, RF
+
+#' Provide a list of linear models for a group of data: LN, RN, LF, RF
+#' To be call based on a group
 #'
-#' @param models models possède 4 groupes:LN, RN, LF, RF
-#' @param groupe 4 groupes:LN, RN, LF, RF
+#' @param models made of 4 groups:LN, RN, LF, RF
+#' @param groupe 4 groups:LN, RN, LF, RF
 #'
-#' @return une liste de modèles LN, RN, LF, LF
+#' @return a list of models: LN, RN, LF, LF
 #' @export
 #'
 #' @examples
 #'M<-getModels(TAB)
-#'estimateurs(M, "LN")
+#'est<-estimateurs(M, "LN")
 
-estimateurs<-function(models, groupe){
+estimators<-function(models, groupe){
   EST<-list()
 
   # groupes: LN, RN, LF, RF
@@ -46,9 +47,6 @@ estimateurs<-function(models, groupe){
     noms<-noms2
 
   }
-
-  # MDS<-parse(text=gr)
-  # MDS<-eval(MDS)
 
   i<-1
   for(m in models[[gr]]){

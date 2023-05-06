@@ -1,3 +1,17 @@
+#' Plot a function
+#'
+#' @param func the function to plot
+#' @param xm minimum value of the interval of representatiion
+#' @param xM maximumvalue of the interval of representatiion
+#' @param main titre of the plot
+#' @param xlab label of axis x
+#' @param ylab label of axis y
+#'
+#' @return
+#' @export
+#'
+#' @examples
+#'
 plotFunction<-function(func, xm, xM, main, xlab, ylab){
 
   fonction<-parse(text=func)

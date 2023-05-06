@@ -4,11 +4,25 @@
 # ex:
 # CS<-regMods("data")
 # matrice= CS[1]
-# intervalel: vecteurs de l'intervalle de mesures. En rapport avec points de mesures: frequencies ou nTypes
+# intervalle: vecteurs de l'intervalle de mesures. En rapport avec points de mesures: frequencies ou nTypes
 # ex:intervalle=c(60,120) pour groupes xN ou intervalle=c(10, 100) pour les groupes xF
 # Supprimer les graphes existants si les nouveaux ne sont pas enregsitrés dans le repertoire de sauvegarde.
 # Sinon fermer Rstudio et relancer
 
+#' Plots the regression curves for the model coefficients: RN, LN, RF, or LF
+#' Version ggplot2::ggplot. Joint representations of all curves.
+#'
+#' @param matrice matrix list of regression coefficients on the coefficients extracted from the measurement data
+#' @param intervalle vectors of the measurement interval. Related to measurement points: frequencies or nTypes.
+#' e.g:intervalle=c(60,120) or intervalle=c(10, 100)
+#'
+#' @return
+#' @export
+#'
+#' @examples
+#' CS<-regMods("data")
+#' matrice= CS[1]
+#'
 plotMODSParams2<-function(matrice, intervalle){
 
   lab<-names(matrice)

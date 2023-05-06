@@ -187,9 +187,9 @@ getC2<-function(){
   return(env$c2)
 }
 
-#' Summary of the constants use for estimation in the package
+#' Summary of the constants use for all estimations in the package
 #'
-#' @return
+#' @return a list of constants
 #' @export
 #'
 #' @examples

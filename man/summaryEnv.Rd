@@ -2,10 +2,13 @@
 % Please edit documentation in R/constants.R
 \name{summaryEnv}
 \alias{summaryEnv}
-\title{Summary of the constants use for estimation in the package}
+\title{Summary of the constants use for all estimations in the package}
 \usage{
 summaryEnv()
 }
+\value{
+a list of constants
+}
 \description{
-Summary of the constants use for estimation in the package
+Summary of the constants use for all estimations in the package
 }

@@ -1,11 +1,16 @@
-# graphe des représentations conjointes paramètrées en F ou N
-# data: jeu de données issu de getMeasures()
-# groupe: "RN", "LN", "RF", "LF"
-# estimation: données issues de l'estimateur (à 125kHz par ex.), vecteur de longueur nTypes ou frequencies
-# estimation: données issue de evalEstimator2
-# param: valeur du paramètre dans les modèles. Ex: 125kHz
 
 
+#' graph of joint representations parametrized in F or N
+#'
+#' @param data dataset from getMeasures()
+#' @param groupe  group of models: "RN", "LN", "RF", "LF"
+#' @param estimation data from evalEstimator2
+#' @param param value of the parameter in the models. Ex: 125kHz
+#'
+#' @return
+#' @export
+#'
+#' @examples
 plotGroups<-function(data, groupe, estimation, param){
 
   #TODO: ajouter traitement de l'extension du data.frame aux valeurs de evalEstimator2

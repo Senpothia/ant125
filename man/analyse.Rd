@@ -2,7 +2,8 @@
 % Please edit documentation in R/analyse.R
 \name{analyse}
 \alias{analyse}
-\title{Data analyse and antenna parameters estimation}
+\title{Data analyse and antenna parameters estimation.Provide N tours according an inductance value or a antenna current selected.
+Provide resonant capacitance according an inductance value estimated.}
 \usage{
 analyse()
 }
@@ -10,7 +11,8 @@ analyse()
 parameters like N, L, C for antenna design
 }
 \description{
-Data analyse and antenna parameters estimation
+Data analyse and antenna parameters estimation.Provide N tours according an inductance value or a antenna current selected.
+Provide resonant capacitance according an inductance value estimated.
 }
 \examples{
 analyse()

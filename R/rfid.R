@@ -1,108 +1,171 @@
-# Calcul du courant d'antenne
-# x: résistance d'antenne
 
 
+
+#' Calculation of the antenna current in mA
+#'
+#' @param x antenna resistance
+#'
+#' @return
+#' @export
+#'
+#' @examples
+#'
 Iant<-function(x){  # En milliampères
-  
+
   I<-(4/pi)*((env$vdd-env$Vss)/(x+env$Rser+2*env$Rad))*1000
   return(I)
-  
+
 }
 
 
+#' Optimise the value of the antenna resistance given a current antenna value
+#'
+#' @param I
+#'
+#' @return
+#' @export
+#'
+#' @examples
+#'
 RforI<-function(I){
   rx<-function(x){abs(Iant(x) - I)}
   r<-optimize(rx, c(0, 10000))
   return (r)
 }
 
-# Calcul du courant d'antenne
-# R: résistance d'antenne
 
+
+#' Calculation of the antenna current in mA
+#'
+#' @param R antenna resistance
+#'
+#' @return
+#' @export
+#'
+#' @examples
+#'
 IantA<-function(R){  # En Ampères
-  
+
   I<-(4/pi)*((env$vdd-env$Vss)/(R+env$Rser+2*env$Rad))
   return(I)
-  
+
 }
 
-# Evalue la courant d'antenne d'après l'estimateur de la résistance d'antenne
-# N: nombre de spires
-# Restimator: estimateur de résistance d'antenne. Expression sous forme de string
-# obtenu à partir des coefficients de régression
 
+#' Evaluates the antenna current from the antenna resistance estimator
+#'
+#' @param N number of turns of the antenna
+#' @param Restimator antenna resistance estimator obtained from the regression coefficients and given in string form
+#'
+#' @return
+#' @export
+#'
+#' @examples
 In<-function(N, Restimator){
-  
+
   RN<-parse(text=Restimator)
   R<-eval(RN)
   I<-Iant(R)
   return(I)
-  
+
 }
 
-# Etimation du champ magnétique
-# Evalue le champ magnétique en fonction du courant d'antenne
-# I: courant estimé d'après In
 
+#' Magnetic field estimation. Evaluates the magnetic field as a function of the antenna current
+#'
+#' @param I current estimated from In function
+#'
+#' @return
+#' @export
+#'
+#' @examples
 Best<-function(I){
-  
+
   b<-I*env$r^2/env$z^3
   return(b)
-  
-  
+
+
 }
 
-# Estimation de la capacité de résonnance
 
+#'  Estimation of the resonance capacity
+#'
+#' @param N number of turns of the antenna
+#' @param L inductance of the antenna
+#'
+#' @return
+#' @export
+#'
+#' @examples
+#'
 Cres<-function(N, L){
-  
+
   L<-eval(L)
   c<-1/((2*pi*en$F0)^2*L(N))^-1
-  
+
 }
 
-Cresonnance<-function(L, F){  # Fréquence de résonnance en kHz pour L en Henry 
-  
+#' Resonance frequency in kHz for L in Henry
+#'
+#' @param L inductance of the antenna
+#'
+#' @return
+#' @export
+#'
+#' @examples
+Cresonnance<-function(L, F){  # Fréquence de résonnance en kHz pour L en Henry
+
   return(1/((2*pi*F*1000)^2*L*1e-03) - env$c2)
 }
 
-# Estimation tension d'antenne 
 
+#' Antenna voltage estimation
+#'
+#' @param N number of turns of the antenna
+#' @param R resistance antenna
+#' @param L inductance antenna
+#'
+#' @return
+#' @export
+#'
+#' @examples
 Vant<-function(N, R, L){
   R<-eval(R)
   L<-eval(L)
-  v<-Iant(R(N))/(2*pi*env$Fo*Cres) 
-  
+  v<-Iant(R(N))/(2*pi*env$Fo*Cres)
+
 }
 
 
-# Estimation fréquence d'accord en foction des paramètres du circuit
-
+#' Estimation of tuning frequency as a function of circuit parameters
+#'
+#' @param L Inductance of the antenna
+#' @param C Capacitance in pf
+#'
+#' @return
+#' @export
+#'
+#' @examples
+#'
 Fres<-function(L,C){
-  
+
   f<-1/(2*pi*sqrt(L*1e-03*C*1e-12))
   return(f)
-  
+
 }
 
-FresN<-function(N,C){
-  
-  f<-1/(2*pi*sqrt(LEst(N)*1e-03*C*1e-12))
-  return(f)
-  
-}
 
-Fmin<-function(N, C, F){
-  
-  return(abs(FresN(N, C)- (F*1000)))
-  
-}
-
-# Evalue l'inductance en mH pour la résonance à la fréquence F donnée en kHz et
-# la capacité C donnée en pF
-
+#'Evaluate the inductance in mH for the resonance at the frequency F given in kHz and the capacitance C given in pF
+#'
+#' @param C capacitance value in pF
+#'
+#' @return
+#' @export
+#'
+#' @examples
+#'
 Lattendue<- function(C, F) {
-  
+
   return(1e3/ (2*pi*F*1000)^2/C)
-  
-} 
+
+}

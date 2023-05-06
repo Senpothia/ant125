@@ -1,6 +1,6 @@
 
-#' Data analyse and antenna parameters estimation
-#'
+#' Data analyse and antenna parameters estimation.Provide N tours according an inductance value or a antenna current selected.
+#'Provide resonant capacitance according an inductance value estimated.
 #' @return parameters like N, L, C for antenna design
 #' @export
 #'

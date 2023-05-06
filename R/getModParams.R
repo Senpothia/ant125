@@ -1,60 +1,70 @@
-# Obtention listes des paramètres de modèles pour un groupe: RN, LN, LF, RF 
-# contenu dans un ensemble désigné par models
 
-getModparams<-function(models, groupe){  # ex appel:
-                                      #           M<-getModels(TAB)
-                                      #           getModparams(M, "LN")
-  
+
+#' lists of model parameters for a group: RN, LN, LF, RF  contained in a set designated by models
+#'
+#' @param models List of models provided by getmModels()
+#' @param groupe groupe of models: LN, RN, LF, RF
+#'
+#' @return
+#' @export
+#'
+#' @examples
+#'
+#' M<-getModels(TAB)
+#' getModparams(M, "LN")
+#'
+getModparams<-function(models, groupe){
+
   PAR<-list()
-  
+
   # groupes: LN, RN, LF, RF
   # models: liste de tous les models d'après le jeu de données traité
-  
+
   if(groupe == "LN"){
-    
+
     gr<-"MODSLN"
   }
-  
+
   if(groupe == "RN"){
-    
+
     gr<-"MODSRN"
   }
-  
+
   if(groupe == "LF"){
-    
+
     gr<-"MODSLF"
   }
-  
-  
+
+
   if(groupe == "RF"){
-    
+
     gr<-"MODSRF"
-    
+
   }
-  
+
   #MODS[["MODSLF"]][1]
   # |       |       |
   # liste   liste   |
   #         interne |
-  #                 indice dans la liste interne        
-  
+  #                 indice dans la liste interne
+
   i<-1
   for(m in models[[gr]]){
     mods<-list()
     for(j in 1:3){
-      
+
       mods[j]<-m$coefficients[j]
-      
-      
+
+
     }
-  
+
     PAR[[i]]<-mods
     i<-i+1
-   
+
   }
-  
- 
+
+
   return(PAR)
-  
-  
+
+
 }

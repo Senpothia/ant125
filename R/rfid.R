@@ -93,6 +93,74 @@ Best<-function(N, Restimator){
 }
 
 
+#' Evaluate the number of turns for peak value of the antenna magnetic field
+#'
+#' @param matrice Matrix of coefficents for antenna resistance estimator
+#' @param param the value of the frequency for evaluation of the resistance antenna estimator
+#' @param interval The range of value to estimate the peak value of the antenna magnetic field
+#'
+#' @return the number of turn to achieve to peak value of the antenna magnetic field
+#' @export
+#'
+#' @examples
+getMaxBest<-function(matrice, param, interval){
+
+  MATRICE <- matrix(unlist(matrice), ncol = 3, byrow = FALSE)
+
+  x<- param
+
+  c<-MATRICE[,1]
+  b<-MATRICE[,2]
+  a<-MATRICE[,3]
+
+  C<-c[1] + c[2]* x + c[3]* x^2
+  B<-b[1] + b[2]* x + b[3]* x^2
+  A<-a[1] + a[2]* x + a[3]* x^2
+
+
+  Rest<-function(y) { C + B * y + A * y^2 }
+  Iantenna<-function(y){(4/pi)*((env$vdd-env$Vss)/(Rest(y)+env$Rser+2*env$Rad))}
+  Best<-function(y){Iantenna(y)*y*env$r^2/env$z^3}
+
+  major<-optimize(Best, interval, maximum = TRUE)
+  return(major)
+
+}
+
+
+#' Evaluate the number of turns for peak value of the antenna current
+#'
+#' @param matrice Matrix of coefficents for antenna resistance estimator
+#' @param param the value of the frequency for evaluation of the resistance antenna estimator
+#' @param interval The range of value to estimate the peak value of the antenna current
+#'
+#' @return the number of turn to achieve to peak value of the antenna current
+#' @export
+#'
+getMaxIest<-function(matrice, param, interval){
+
+  MATRICE <- matrix(unlist(matrice), ncol = 3, byrow = FALSE)
+
+  x<- param
+
+  c<-MATRICE[,1]
+  b<-MATRICE[,2]
+  a<-MATRICE[,3]
+
+  C<-c[1] + c[2]* x + c[3]* x^2
+  B<-b[1] + b[2]* x + b[3]* x^2
+  A<-a[1] + a[2]* x + a[3]* x^2
+
+
+  Rest<-function(y) { C + B * y + A * y^2 }
+  Iantenna<-function(y){(4/pi)*((env$vdd-env$Vss)/(Rest(y)+env$Rser+2*env$Rad))}
+
+
+  major<-optimize(Iantenna, interval, maximum = TRUE)
+  return(major)
+
+}
+
 #'  Estimation of the resonance capacity
 #'
 #' @param N number of turns of the antenna

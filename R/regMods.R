@@ -13,9 +13,27 @@
 regMods<-function(data){
 
   nomCoefs<-c("D0" , "D1", "D3")
-  TAB<-getMeasures(data, ",", ".")
-  # N<-sort(unique(TAB$N))
-  # F<-sort(unique(TAB$F))
+
+
+  tryCatch(                       # Applying tryCatch
+
+    expr = {
+      TAB<-getMeasures(data, ",", ".")
+    },
+
+    error = function(e){          # Specifying error message
+      TAB<-getMeasures(data, ";", ",")
+    },
+
+    warning = function(w){        # Specifying warning message
+
+    },
+
+    finally = {                   # Specifying final message
+
+    }
+  )
+
   nTypes<-sort(unique(TAB$N))
   frequencies<-sort(unique(TAB$F))
 
@@ -46,7 +64,7 @@ regMods<-function(data){
 
   COEFS<-list(MLF, MRF, MRN, MLN)
   names(COEFS)<-c("LF", "RF", "RN", "LN")
- # MATRICE <- matrix(unlist(COEFS), ncol = 3, byrow = FALSE)
+
   print(COEFS)
   return(COEFS)
 

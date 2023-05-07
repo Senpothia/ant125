@@ -1,6 +1,6 @@
 #' Plot a function
 #'
-#' @param func the function to plot
+#' @param func the function to plot given in string form
 #' @param xm minimum value of the interval of representatiion
 #' @param xM maximumvalue of the interval of representatiion
 #' @param main titre of the plot
@@ -11,13 +11,16 @@
 #' @export
 #'
 #' @examples
+#' f<-"x^2 + 2*x +3"
+#' plotFunction(f, 0, 20, "title", "axis x name", "axis y name")
 #'
 plotFunction<-function(func, xm, xM, main, xlab, ylab){
 
+  X <- seq(xm, xM, by=1)
   fonction<-parse(text=func)
-  fonction<-eval(fonction)
-  x <- seq(xm, xM, by=1)
-  val <- data.frame(x = x, y = fonction(x))
+  Y<-fonction<-eval(fonction)
+
+  val <- data.frame(x = X, y = Y)
   p<-(
     ggplot2::ggplot(data = val, ggplot2::aes(x = x, y = y))+#, color="red")) +
       ggplot2::geom_line(color="red") +

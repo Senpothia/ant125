@@ -7,7 +7,7 @@
 plotFunction(func, xm, xM, main, xlab, ylab)
 }
 \arguments{
-\item{func}{the function to plot}
+\item{func}{the function to plot given in string form}
 
 \item{xm}{minimum value of the interval of representatiion}
 

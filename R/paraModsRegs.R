@@ -1,9 +1,3 @@
-# Déduit les modèles sur les paramètres à partir d'une matrice de paramètres
-# matrice: matrice issue d'un groupe RN, RL, LN, ou LF via getMatParams()
-# abscisse: vecteur des valeurs de fréquences F ou de nbre de spires N qui ont servis aux mesures
-# abscisse est le paramètre du réseau de courbes étudié: F pour RN, LN; N pour RF, LF
-
-
 
 #' Deduce models on the parameters from a matrix of parameters
 #'

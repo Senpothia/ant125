@@ -5,7 +5,7 @@
 #' @param matrice matrix list of regression coefficients on the coefficients extracted from the measurement data
 #'
 #' @return
-#'  Returns the equation Y(x) representing the quantity of interest L or N as a function of x (N or F)
+#'  Returns the equation Y(x) representing the quantity of interest L or R as a function of x (N or F)
 #' Y(y) <-C(x) + B(x) * y + A(x) * y^2
 #' A, B, C factor in the form of polymorphs of degree 2, result of the regression on the parameters
 #' of the models

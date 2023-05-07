@@ -22,3 +22,8 @@ plotFunction(func, xm, xM, main, xlab, ylab)
 \description{
 Plot a function
 }
+\examples{
+f<-"x^2 + 2*x +3"
+plotFunction(f, 0, 20, "title", "axis x name", "axis y name")
+
+}

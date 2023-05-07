@@ -2,13 +2,15 @@
 % Please edit documentation in R/rfid.R
 \name{Best}
 \alias{Best}
-\title{Magnetic field estimation. Evaluates the magnetic field as a function of the antenna current}
+\title{Evaluate the antenna magnetic field based on the antenna resistance estimator and the number of turns}
 \usage{
-Best(I)
+Best(N, Restimator)
 }
 \arguments{
-\item{I}{current estimated from In function}
+\item{N}{number of turns}
+
+\item{Restimator}{an estiamtor of the antenna resistance obtained from the regression coefficients and given in string form}
 }
 \description{
-Magnetic field estimation. Evaluates the magnetic field as a function of the antenna current
+Evaluate the antenna magnetic field based on the antenna resistance estimator and the number of turns
 }

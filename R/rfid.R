@@ -71,17 +71,22 @@ In<-function(N, Restimator){
 }
 
 
-#' Magnetic field estimation. Evaluates the magnetic field as a function of the antenna current
+
+#' Evaluate the antenna magnetic field based on the antenna resistance estimator and the number of turns
 #'
-#' @param I current estimated from In function
+#' @param N number of turns
+#' @param Restimator an estiamtor of the antenna resistance obtained from the regression coefficients and given in string form
 #'
 #' @return
 #' @export
 #'
 #' @examples
-Best<-function(I){
+Best<-function(N, Restimator){
 
-  b<-I*env$r^2/env$z^3
+  RN<-parse(text=Restimator)
+  R<-eval(RN)
+  I<-Iant(R)
+  b<-I*N*env$r^2/env$z^3
   return(b)
 
 

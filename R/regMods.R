@@ -16,25 +16,6 @@ regMods<-function(data){
 
   TAB<-getMeasures(data)
 
-  # tryCatch(                       # Applying tryCatch
-  #
-  #   expr = {
-  #     TAB<-getMeasures(data, ",", ".")
-  #   },
-  #
-  #   error = function(e){          # Specifying error message
-  #     TAB<-getMeasures(data, ";", ",")
-  #   },
-  #
-  #   warning = function(w){        # Specifying warning message
-  #
-  #   },
-  #
-  #   finally = {                   # Specifying final message
-  #
-  #   }
-  # )
-
   nTypes<-sort(unique(TAB$N))
   frequencies<-sort(unique(TAB$F))
 

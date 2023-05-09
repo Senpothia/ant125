@@ -14,25 +14,6 @@ getAllGraphs<-function(file, params){
 
   TAB<-getMeasures(file)
 
-  # tryCatch(                       # Applying tryCatch
-  #
-  #   expr = {
-  #     TAB<-getMeasures(data, ",", ".")
-  #   },
-  #
-  #   error = function(e){          # Specifying error message
-  #     TAB<-getMeasures(data, ";", ",")
-  #   },
-  #
-  #   warning = function(w){        # Specifying warning message
-  #
-  #   },
-  #
-  #   finally = {                   # Specifying final message
-  #
-  #   }
-  # )
-
   frequencies<-sort(unique(TAB$F))     # Liste des fréquences
   echs<-sort(unique(TAB$ech))
   nTypes<-sort(unique(TAB$N))

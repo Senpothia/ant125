@@ -1,17 +1,17 @@
 
 env<-new.env(parent = emptyenv())
 
-env$F0<-100000   # fréquence de référence
-env$dataSource="./data/"
+env$F0<-100000                            # fréquence de référence
+env$dataSource="./data/"                  # Dossier des fichiers de mesures
 env$vdd=5
 env$Vss=0
-env$Rser=27
-env$Rad=9
-env$z=1e-2 # distance de référence 1cm
-env$r=0.38 # rayon de l'antenne
-env$Cdv1=39e-12
-env$Cdv2=1.5e-09
-env$c2<-(39e-12*1.5e-9)/(39e-12+1.5e-9)  # Influence pont capacitif
+env$Rser=27                               # Résistance limitation de courant d'antenne
+env$Rad=9                                 # Résistance de sortie driver antenne
+env$z=1e-2                                # distance de référence 1cm
+env$r=0.38                                # rayon de l'antenne
+env$Cdv1=39e-12                           # Pont capacitif: capacité 1
+env$Cdv2=1.5e-09                          # Pont capacitif: capacité 2
+env$c2<-(39e-12*1.5e-9)/(39e-12+1.5e-9)   # Influence pont capacitif
 
 
 #' Set source folder for loading data

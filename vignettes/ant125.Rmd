@@ -1,6 +1,6 @@
 ---
 title: "ant125"
-output: rmarkdown::html_vignette
+output: rmarkdown::pdf_document
 vignette: >
   %\VignetteIndexEntry{ant125}
   %\VignetteEngine{knitr::rmarkdown}
@@ -17,3 +17,5 @@ knitr::opts_chunk$set(
 ```{r setup}
 library(ant125)
 ```
+
+hello!

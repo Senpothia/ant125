@@ -7,10 +7,15 @@
 Fres(L, C)
 }
 \arguments{
-\item{L}{Inductance of the antenna}
+\item{L}{Inductance of the antenna in mH}
 
 \item{C}{Capacitance in pf}
 }
 \description{
 Estimation of tuning frequency as a function of circuit parameters
+}
+\examples{
+Fres(1.65, 980)
+[1] 125159.9
+
 }

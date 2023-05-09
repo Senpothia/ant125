@@ -9,8 +9,13 @@ Cres(N, L)
 \arguments{
 \item{N}{number of turns of the antenna}
 
-\item{L}{inductance of the antenna}
+\item{L}{inductance of the antenna estimator given as string. N must be the variable. e.g: 2*N+3}
 }
 \description{
 Estimation of the resonance capacity
+}
+\examples{
+c<-Cres(60, "2*N+6")
+[1] 4.974281e+13
+
 }

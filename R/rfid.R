@@ -1,6 +1,4 @@
 
-
-
 #' Calculation of the antenna current in mA
 #'
 #' @param x antenna resistance
@@ -89,7 +87,6 @@ Best<-function(N, Restimator){
   b<-I*N*env$r^2/env$z^3
   return(b)
 
-
 }
 
 
@@ -103,6 +100,7 @@ Best<-function(N, Restimator){
 #' @export
 #'
 #' @examples
+#'
 getMaxBest<-function(matrice, param, interval){
 
   MATRICE <- matrix(unlist(matrice), ncol = 3, byrow = FALSE)
@@ -164,28 +162,34 @@ getMaxIest<-function(matrice, param, interval){
 #'  Estimation of the resonance capacity
 #'
 #' @param N number of turns of the antenna
-#' @param L inductance of the antenna
+#' @param L inductance of the antenna estimator given as string. N must be the variable. e.g: 2*N+3
 #'
 #' @return
 #' @export
 #'
 #' @examples
+#' c<-Cres(60, "2*N+6")
+#' [1] 4.974281e+13
 #'
 Cres<-function(N, L){
 
-  L<-eval(L)
-  c<-1/((2*pi*en$F0)^2*L(N))^-1
+  L<-parse(text=L)
+  Lant<-eval(L)
+  c<-1/((2*pi*env$F0)^2*Lant)^-1
 
 }
 
-#' Resonance frequency in kHz for L in Henry
+#' Resonnance capacitance calculation
 #'
-#' @param L inductance of the antenna
-#'
+#' @param L inductance of the antenna in mH
+#' @param F frequency in kHz
 #' @return
 #' @export
 #'
 #' @examples
+#' Cresonnance(1.65, 125)
+#' [1] 9.444968e-10
+#'
 Cresonnance<-function(L, F){  # Fréquence de résonnance en kHz pour L en Henry
 
   return(1/((2*pi*F*1000)^2*L*1e-03) - env$c2)
@@ -195,30 +199,62 @@ Cresonnance<-function(L, F){  # Fréquence de résonnance en kHz pour L en Henry
 #' Antenna voltage estimation
 #'
 #' @param N number of turns of the antenna
-#' @param R resistance antenna
-#' @param L inductance antenna
+#' @param R resistance antenna estimator given as a string, N must be the variable. e.g: 2*N+2
+#' @param L inductance antenna estimator given as a string, N must be the variable. e.g: 3*N+6
+#'
 #'
 #' @return
 #' @export
 #'
 #' @examples
+#' Vant(100, "2*N+2", "3*N+6")
+#' print(Vant(100, "2*N+2", "3*N+6"))
+#' v<-Vant(100, "2*N+2", "3*N+6")
+#' v
+#' [1] 3.395644e-19
+#'
 Vant<-function(N, R, L){
-  R<-eval(R)
-  L<-eval(L)
-  v<-Iant(R(N))/(2*pi*env$Fo*Cres)
+
+  R<-parse(text=R)
+  L<-parse(text=L)
+  Rant<-eval(R)
+  Lant<-eval(L)
+  v<-Iant(Rant)/(2*pi*env$F0*Cres(N, Lant))
+
+}
+
+
+#' Provide antenna voltage given the number of turns, the resistance and inductance value of the antenna
+#'
+#' @param N number of turns
+#' @param R antenna resistance in Ohm
+#' @param L antenna inductance in Henry
+#'
+#' @return
+#' @export
+#'
+#' @examples
+#' v<-getVant(70, 200, 1.6e-3)
+#'
+getVant<-function(N, R, L){
+
+  C<-1/((2*pi*env$F0)^2*L)^-1
+  v<-Iant(R)/(2*pi*env$F0*C)
 
 }
 
 
 #' Estimation of tuning frequency as a function of circuit parameters
 #'
-#' @param L Inductance of the antenna
+#' @param L Inductance of the antenna in mH
 #' @param C Capacitance in pf
 #'
 #' @return
 #' @export
 #'
 #' @examples
+#'Fres(1.65, 980)
+#'[1] 125159.9
 #'
 Fres<-function(L,C){
 
@@ -236,6 +272,8 @@ Fres<-function(L,C){
 #' @export
 #'
 #' @examples
+#'Lattendue(980e-12, 125)
+#'[1] 1.654223
 #'
 Lattendue<- function(C, F) {
 

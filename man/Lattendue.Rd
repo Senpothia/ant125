@@ -12,3 +12,8 @@ Lattendue(C, F)
 \description{
 Evaluate the inductance in mH for the resonance at the frequency F given in kHz and the capacitance C given in pF
 }
+\examples{
+Lattendue(980e-12, 125)
+[1] 1.654223
+
+}

@@ -2,13 +2,20 @@
 % Please edit documentation in R/rfid.R
 \name{Cresonnance}
 \alias{Cresonnance}
-\title{Resonance frequency in kHz for L in Henry}
+\title{Resonnance capacitance calculation}
 \usage{
 Cresonnance(L, F)
 }
 \arguments{
-\item{L}{inductance of the antenna}
+\item{L}{inductance of the antenna in mH}
+
+\item{F}{frequency in kHz}
 }
 \description{
-Resonance frequency in kHz for L in Henry
+Resonnance capacitance calculation
+}
+\examples{
+Cresonnance(1.65, 125)
+[1] 9.444968e-10
+
 }

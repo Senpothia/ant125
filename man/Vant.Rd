@@ -9,10 +9,18 @@ Vant(N, R, L)
 \arguments{
 \item{N}{number of turns of the antenna}
 
-\item{R}{resistance antenna}
+\item{R}{resistance antenna estimator given as a string, N must be the variable. e.g: 2*N+2}
 
-\item{L}{inductance antenna}
+\item{L}{inductance antenna estimator given as a string, N must be the variable. e.g: 3*N+6}
 }
 \description{
 Antenna voltage estimation
+}
+\examples{
+Vant(100, "2*N+2", "3*N+6")
+print(Vant(100, "2*N+2", "3*N+6"))
+v<-Vant(100, "2*N+2", "3*N+6")
+v
+[1] 3.395644e-19
+
 }

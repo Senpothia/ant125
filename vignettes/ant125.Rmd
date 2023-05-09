@@ -1,10 +1,13 @@
 ---
-title: "ant125"
-output: rmarkdown::pdf_document
-vignette: >
-  %\VignetteIndexEntry{ant125}
-  %\VignetteEngine{knitr::rmarkdown}
-  %\VignetteEncoding{UTF-8}
+title: "Estimation d'antennes RFID 125kHz "
+output: 
+  pdf_document: 
+    toc: yes
+    toc_depth: 2
+toc: true
+toc_depth: 2
+author: Michel LOPEZ
+date: "2023-05-09"
 ---
 
 ```{r, include = FALSE}
@@ -14,8 +17,16 @@ knitr::opts_chunk$set(
 )
 ```
 
-```{r setup}
+```{r setup, include = FALSE}
 library(ant125)
 ```
 
-hello!
+# Introduction
+
+Le package **ant125** présente un ensemble de fonctions pour faciliter la conception des antennes de lecteurs RFID 125kHz. Il permet d'estimer les paramètres de ces antennes sur la base d'analyses faites sur de simples relevés de mesures.
+
+# Théorie
+
+# Présentation des fonctions
+
+# Recueil de mesures

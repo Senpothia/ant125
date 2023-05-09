@@ -2,7 +2,7 @@
 env<-new.env(parent = emptyenv())
 
 env$F0<-100000   # fréquence de référence
-env$dataSource="./data/mesures.csv"
+env$dataSource="./data/"
 env$vdd=5
 env$Vss=0
 env$Rser=27

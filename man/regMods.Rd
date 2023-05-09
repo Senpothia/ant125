@@ -8,7 +8,7 @@ after regression on all the coefficients matrices}
 regMods(data)
 }
 \arguments{
-\item{data}{data file to be processed}
+\item{data}{data file to be processed given as a string}
 }
 \description{
 Returns a list of all group coefficient matrices: RN, RF, LN, LF

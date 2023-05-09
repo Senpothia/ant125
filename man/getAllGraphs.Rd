@@ -4,9 +4,11 @@
 \alias{getAllGraphs}
 \title{Provides the set of cumulative graphs with insertion of the simulated curve}
 \usage{
-getAllGraphs(params)
+getAllGraphs(file, params)
 }
 \arguments{
+\item{file}{name of the file to be processed given as a string}
+
 \item{params}{list of parameter values}
 }
 \value{
@@ -16,6 +18,6 @@ plots of quantities of interest
 Provides the set of cumulative graphs with insertion of the simulated curve
 }
 \examples{
-getAllGraphs(c(110, 110, 125, 90))
- getAllGraphs(c(N1, N2, F1, F2))
+getAllGraphs("data", c(110, 110, 125, 90))
+getAllGraphs("data", c(N1, N2, F1, F2))
 }

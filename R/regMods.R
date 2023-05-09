@@ -2,7 +2,7 @@
 #' Returns a list of all group coefficient matrices: RN, RF, LN, LF
 #' after regression on all the coefficients matrices
 #'
-#' @param data data file to be processed
+#' @param data data file to be processed given as a string
 #'
 #' @return
 #' @export
@@ -14,25 +14,26 @@ regMods<-function(data){
 
   nomCoefs<-c("D0" , "D1", "D3")
 
+  TAB<-getMeasures(data)
 
-  tryCatch(                       # Applying tryCatch
-
-    expr = {
-      TAB<-getMeasures(data, ",", ".")
-    },
-
-    error = function(e){          # Specifying error message
-      TAB<-getMeasures(data, ";", ",")
-    },
-
-    warning = function(w){        # Specifying warning message
-
-    },
-
-    finally = {                   # Specifying final message
-
-    }
-  )
+  # tryCatch(                       # Applying tryCatch
+  #
+  #   expr = {
+  #     TAB<-getMeasures(data, ",", ".")
+  #   },
+  #
+  #   error = function(e){          # Specifying error message
+  #     TAB<-getMeasures(data, ";", ",")
+  #   },
+  #
+  #   warning = function(w){        # Specifying warning message
+  #
+  #   },
+  #
+  #   finally = {                   # Specifying final message
+  #
+  #   }
+  # )
 
   nTypes<-sort(unique(TAB$N))
   frequencies<-sort(unique(TAB$F))

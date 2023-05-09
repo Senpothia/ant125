@@ -5,14 +5,10 @@
 \title{Loads data from file. The file must be located on the appropriate folder. The folder must be named data and placed at the root
 of the project folder}
 \usage{
-getMeasures(file, s = ";", d = ",")
+getMeasures(file)
 }
 \arguments{
-\item{file}{Name of the data file. The file must be saved with .csv extention}
-
-\item{s}{The separator of data in the data file: "," or ";"}
-
-\item{d}{The decimal point used in the data file: "," or "."}
+\item{file}{Name of the data file. The file must be saved with .csv extention and given as a string}
 }
 \value{
 A data frame made of the data recorded
@@ -22,5 +18,5 @@ Loads data from file. The file must be located on the appropriate folder. The fo
 of the project folder
 }
 \examples{
-TAB<-getMeasures("data", ",", ".")
+TAB<-getMeasures("data")
 }

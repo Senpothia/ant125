@@ -2,21 +2,42 @@
 #' Provides the set of cumulative graphs with insertion of the simulated curve
 #'
 #' @param params list of parameter values
+#' @param file name of the file to be processed given as a string
 #'
 #' @return plots of quantities of interest
 #' @export
 #'
-#' @examples getAllGraphs(c(110, 110, 125, 90))
-#'  getAllGraphs(c(N1, N2, F1, F2))
-getAllGraphs<-function(params){
+#' @examples
+#' getAllGraphs("data", c(110, 110, 125, 90))
+#' getAllGraphs("data", c(N1, N2, F1, F2))
+getAllGraphs<-function(file, params){
 
-  TAB<-getMeasures("data", ",", ".")
+  TAB<-getMeasures(file)
+
+  # tryCatch(                       # Applying tryCatch
+  #
+  #   expr = {
+  #     TAB<-getMeasures(data, ",", ".")
+  #   },
+  #
+  #   error = function(e){          # Specifying error message
+  #     TAB<-getMeasures(data, ";", ",")
+  #   },
+  #
+  #   warning = function(w){        # Specifying warning message
+  #
+  #   },
+  #
+  #   finally = {                   # Specifying final message
+  #
+  #   }
+  # )
 
   frequencies<-sort(unique(TAB$F))     # Liste des fréquences
   echs<-sort(unique(TAB$ech))
   nTypes<-sort(unique(TAB$N))
 
-  CS<-regMods("data")
+  CS<-regMods(file)
 
   YY<-evalEstimator2(CS[1], params[1], frequencies) #LF; param: N
   plotGroups(TAB, "LF", YY, params[1]) #LF

@@ -17,6 +17,6 @@ Provides a list of all RN, LN, RF, LF model lists
 }
 \examples{
 TAB<-getMeasures("data",",", ".")
-MODS<-getModels(TAB
+MODS<-getModels(TAB)
 
 }

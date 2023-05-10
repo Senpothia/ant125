@@ -12,7 +12,11 @@ env$r=0.38                                # rayon de l'antenne
 env$Cdv1=39e-12                           # Pont capacitif: capacité 1
 env$Cdv2=1.5e-09                          # Pont capacitif: capacité 2
 env$c2<-(39e-12*1.5e-9)/(39e-12+1.5e-9)   # Influence pont capacitif
-
+env$frequencies
+env$turns
+env$echs
+env$namesFrequencies
+env$namesTurns
 
 #' Set source folder for loading data
 #'
@@ -208,4 +212,19 @@ summaryEnv<-function(){
   print(paste("Pont capacitif, Cdv2:",env$Cdv2))
   print(paste("Pont capacitif, capacité équivalente:",getC2())) # Influence pont capacitif
   print("-------------------------------------------------------------------------------------")
+}
+
+setFrequencies<-function(fs){
+
+  env$frequencies<-fs
+}
+
+setTurns<-function(trns){
+
+  env$turns<-trns
+}
+
+setEchs<-function(es){
+
+  env$echs<-es
 }

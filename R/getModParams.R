@@ -58,12 +58,13 @@ getModparams<-function(models, groupe){
 
     }
 
+    names(mods)<-rep(gr, 3)
     PAR[[i]]<-mods
     i<-i+1
 
   }
 
-
+  names(PAR)<-rep(groupe, length(PAR))
   return(PAR)
 
 

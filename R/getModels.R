@@ -9,7 +9,7 @@
 #'
 #' @examples
 #' TAB<-getMeasures("data",",", ".")
-#' MODS<-getModels(TAB
+#' MODS<-getModels(TAB)
 #'
 getModels<-function(TAB){
 
@@ -50,7 +50,7 @@ getModels<-function(TAB){
     j<-j+1
 
   }
-  names(MODSLN)<-c("F=10", "F=20", "F=28.5", "F=40", "F=50", "F=66.6", "F=100")
+  names(MODSLN)<-env$namesFrequencies
 
   # RN: Résistance vs N paramétrée en F
 
@@ -66,7 +66,7 @@ getModels<-function(TAB){
 
   }
 
-  names(MODSRN)<-c("F=10", "F=20", "F=28.5", "F=40", "F=50", "F=66.6", "F=100")
+  names(MODSRN)<-env$namesFrequencies
   # ---------------    Courbes paramétrées par N   -------------------------------
   # LF: Inductance vs F paramétrée en N
 
@@ -82,7 +82,7 @@ getModels<-function(TAB){
 
   }
 
-  names(MODSLF)<-c("N=60", "N=80", "N=100", "N=120")
+  names(MODSLF)<-env$namesTurns
 
   # RF: Résistance vs F paramétrée en N
 
@@ -97,7 +97,7 @@ getModels<-function(TAB){
     j<-j+1
 
   }
-  names(MODSRF)<-c("N=60", "N=80", "N=100", "N=120")
+  names(MODSRF)<-env$namesTurns
 
   MODS<-list(MODSLF, MODSRF, MODSLN, MODSRN)
   names(MODS)<-c("MODSLF", "MODSRF", "MODSLN", "MODSRN")

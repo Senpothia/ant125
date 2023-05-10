@@ -21,12 +21,12 @@ getMeasures<-function(file){
   tryCatch(                       # Applying tryCatch
 
     expr = {
-      TAB<-read.table(file,header=TRUE,sep=";",dec=",")
+      TAB<-read.table(file, header=TRUE, sep=";", dec=",")
     },
 
     error = function(e){          # Specifying error message
 
-      TAB<-read.table(file,header=TRUE,sep=",",dec=".")
+      TAB<-read.table(file, header=TRUE, sep=",", dec=".")
     },
 
     warning = function(w){        # Specifying warning message
@@ -37,6 +37,29 @@ getMeasures<-function(file){
 
     }
   )
+
+  env$frequencies<-sort(unique(TAB$F))     # Liste des fréquences
+  env$echs<-sort(unique(TAB$ech))
+  env$turns<-sort(unique(TAB$N))
+  namesFreq<-c()
+  namesTurns<-c()
+
+  i<-1
+  for(f in env$frequencies){
+
+      namesFreq[i]<-paste("F=", f, sep="")
+      i<-i+1
+  }
+
+  i<-1
+  for(n in env$turns){
+
+    namesTurns[i]<-paste("N=", n, sep="")
+    i<-i+1
+  }
+
+   env$namesFrequencies<-namesFreq
+   env$namesTurns<-namesTurns
 
   return(TAB)
 

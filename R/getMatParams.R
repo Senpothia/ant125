@@ -13,16 +13,26 @@ getMatParams<-function(coef){
 
 
   MAT <- matrix(unlist(coef), ncol = 3, byrow = TRUE)
+  if(names(coef)[1]== "LF"){
 
-  if(dim(MAT)[1] == 4){
-
-    dimnames(MAT) <- list(c("N=60", "N=80", "N=100", "N=120"), c("D0", "D1", "D2"))
+    dimnames(MAT) <- list(env$namesTurns, c("D0", "D1", "D2"))
   }
 
-  if(dim(MAT)[1] == 7){
+  if(names(coef)[1]== "RF"){
 
-    dimnames(MAT) <- list(c("F=10", "F=20", "F=28.5", "F=40", "F=50", "F=66.6", "F=100"), c("D0", "D1", "D2"))
+    dimnames(MAT) <- list(env$namesTurns, c("D0", "D1", "D2"))
   }
+
+  if(names(coef)[1]== "LN"){
+
+    dimnames(MAT) <- list(env$namesFrequencies, c("D0", "D1", "D2"))
+  }
+
+  if(names(coef)[1]== "LN"){
+
+    dimnames(MAT) <- list(env$namesFrequencies, c("D0", "D1", "D2"))
+  }
+
 
   return(MAT)
 

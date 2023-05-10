@@ -5,7 +5,10 @@
 \title{Data analyse and antenna parameters estimation.Provide N tours according an inductance value or a antenna current selected.
 Provide resonant capacitance according an inductance value estimated.}
 \usage{
-analyse()
+analyse(data)
+}
+\arguments{
+\item{data}{The data file to be processed}
 }
 \value{
 parameters like N, L, C for antenna design

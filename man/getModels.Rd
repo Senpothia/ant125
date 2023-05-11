@@ -16,7 +16,7 @@ A list of lists of models: RN, LN, LF, RF
 Provides a list of all RN, LN, RF, LF model lists
 }
 \examples{
-TAB<-getMeasures("data",",", ".")
+TAB<-getMeasures("data")
 MODS<-getModels(TAB)
 
 }

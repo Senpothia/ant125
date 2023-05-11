@@ -8,7 +8,7 @@
 #' @export
 #'
 #' @examples
-#' TAB<-getMeasures("data",",", ".")
+#' TAB<-getMeasures("data")
 #' MODS<-getModels(TAB)
 #'
 getModels<-function(TAB){

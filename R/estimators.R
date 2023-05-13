@@ -19,32 +19,32 @@ estimators<-function(models, groupe){
   # groupes: LN, RN, LF, RF
   # models: liste de tous les models d'après le jeu de données traité
   noms<-c()
-  noms1<-c("F=10", "F=20", "F=28.5", "F=40", "F=50", "F=66.6", "F=100")
-  noms2<-c("N=60", "N=80", "N=100", "N=120")
+  # noms1<-c("F=10", "F=20", "F=28.5", "F=40", "F=50", "F=66.6", "F=100")
+  # noms2<-c("N=60", "N=80", "N=100", "N=120")
 
   if(groupe == "LN"){
 
     gr<-"MODSLN"
-    noms<-noms1
+    noms<-env$namesFrequencies
   }
 
   if(groupe == "RN"){
 
     gr<-"MODSRN"
-    noms<-noms1
+    noms<-env$namesFrequencies
   }
 
   if(groupe == "LF"){
 
     gr<-"MODSLF"
-    noms<-noms2
+    noms<-env$namesTurns
   }
 
 
   if(groupe == "RF"){
 
     gr<-"MODSRF"
-    noms<-noms2
+    noms<-env$namesTurns
 
   }
 

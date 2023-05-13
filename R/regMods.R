@@ -16,33 +16,33 @@ regMods<-function(data){
 
   TAB<-getMeasures(data)
 
-  nTypes<-sort(unique(TAB$N))
-  frequencies<-sort(unique(TAB$F))
+  # nTypes<-sort(unique(TAB$N))
+  # frequencies<-sort(unique(TAB$F))
 
   MODS<-getModels(TAB)
 
   paramsLF<-getModparams(MODS, "LF")
   matLF<-getMatParams(paramsLF)
-  dimnames(matLF) <- list(nTypes,nomCoefs)
+  dimnames(matLF) <- list(env$namesTurns,nomCoefs)
 
   paramsRF<-getModparams(MODS, "RF")
   matRF<-getMatParams(paramsRF)
-  dimnames(matRF) <- list(nTypes, nomCoefs)
+  dimnames(matRF) <- list(env$namesTurns, nomCoefs)
 
   paramsLN<-getModparams(MODS, "LN")
   matLN<-getMatParams(paramsLN)
-  dimnames(matLN) <- list(frequencies, nomCoefs)
+  dimnames(matLN) <- list(env$namesFrequencies, nomCoefs)
 
   paramsRN<-getModparams(MODS, "RN")
   matRN<-getMatParams(paramsRN)
-  dimnames(matRN) <- list(frequencies, nomCoefs)
+  dimnames(matRN) <- list(env$namesFrequencies, nomCoefs)
 
   print("----  REGRESSION SUR LES COEFFICIENTS REELS   ------")
 
-  MLF<-paraModsRegs(matLF, nTypes)
-  MRF<-paraModsRegs(matRF, nTypes)
-  MRN<-paraModsRegs(matRN, frequencies)
-  MLN<-paraModsRegs(matLN, frequencies)
+  MLF<-paraModsRegs(matLF, env$turns)
+  MRF<-paraModsRegs(matRF, env$turns)
+  MRN<-paraModsRegs(matRN, env$frequencies)
+  MLN<-paraModsRegs(matLN, env$frequencies)
 
   COEFS<-list(MLF, MRF, MRN, MLN)
   names(COEFS)<-c("LF", "RF", "RN", "LN")

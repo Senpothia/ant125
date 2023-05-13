@@ -12,7 +12,7 @@
 paraModsRegs<-function(matrice, abscisse){
 
   l<-list()
-
+  j<-1
   for(i in 1:3){
 
     v<-vector()
@@ -21,9 +21,10 @@ paraModsRegs<-function(matrice, abscisse){
     v[1]<-m$coefficients[1]
     v[2]<-m$coefficients[2]
     v[3]<-m$coefficients[3]
-    l[[i]]<-v
+    l[[j]]<-v
+    j<-j+1
   }
-  MAT <- matrix(unlist(l), ncol = 3, byrow = TRUE)
+  MAT <- matrix(unlist(l), ncol = 3, byrow = FALSE)
   dimnames(MAT) <- list(c("Dgr0", "Dgr1", "Dgr2"), c("D0", "D1", "D2"))
   return(MAT)
 

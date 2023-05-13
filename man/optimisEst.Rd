@@ -5,16 +5,12 @@
 \title{Returns the value of the abcissa of the N or F estimator which provides the value of the quantity
 of interest: L or R}
 \usage{
-optimisEst(matrice, value, param, interval)
+optimisEst(coefs, value, interval)
 }
 \arguments{
-\item{matrice}{matrix of parameters provided by:  CS<-regMods("data")}
+\item{coefs}{estimated parameters of the model}
 
 \item{value}{expected value of the quantity of interest}
-
-\item{param}{parameter of the model coefficients. ex: 125kHz}
-
-\item{interval}{}
 }
 \description{
 Returns the value of the abcissa of the N or F estimator which provides the value of the quantity

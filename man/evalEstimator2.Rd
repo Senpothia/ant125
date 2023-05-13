@@ -2,24 +2,22 @@
 % Please edit documentation in R/evalEstimator2.R
 \name{evalEstimator2}
 \alias{evalEstimator2}
-\title{Executes the calculation of the values of the quantity of interest according to the estimator}
+\title{Executes the calculation of the values of the quantity of interest according to the estimator coefficients}
 \usage{
-evalEstimator2(matrice, param, interval)
+evalEstimator2(coefs, parameter)
 }
 \arguments{
-\item{matrice}{matrix of regression coefficients}
+\item{coefs}{estimated coefficients of the model}
 
-\item{param}{value of the parameter. ex: F=125. The frequencies are indicated in kHz}
-
-\item{interval}{range of the calculation interval. ex: 60:120 or seq(60:120, by=0.1) for the number of turns if the parameter is F}
+\item{parameter}{the value to provide the quantity of interest value}
 }
 \value{
-a list of values according the estimator on the whole range of interval calculation
+a numeric
 }
 \description{
-Executes the calculation of the values of the quantity of interest according to the estimator
+Executes the calculation of the values of the quantity of interest according to the estimator coefficients
 }
 \examples{
-evalEstimator2(CS[3], 125, c(60, 120))
+evalEstimator2(COEFSL, 524)
 
 }

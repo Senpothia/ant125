@@ -8,7 +8,7 @@ Provide resonant capacitance according an inductance value estimated.}
 analyse(data)
 }
 \arguments{
-\item{data}{The data file to be processed}
+\item{data}{The data file to be processed. The must be save with csv extention.}
 }
 \value{
 parameters like N, L, C for antenna design
@@ -18,6 +18,6 @@ Data analyse and antenna parameters estimation.Provide N tours according an indu
 Provide resonant capacitance according an inductance value estimated.
 }
 \examples{
-analyse()
+analyse("data")
 
 }

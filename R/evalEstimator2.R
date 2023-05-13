@@ -1,32 +1,20 @@
 
-#' Executes the calculation of the values of the quantity of interest according to the estimator
+#' Executes the calculation of the values of the quantity of interest according to the estimator coefficients
+#
+#' @param coefs estimated coefficients of the model
 #'
-#' @param matrice  matrix of regression coefficients
-#' @param param value of the parameter. ex: F=125. The frequencies are indicated in kHz
-#' @param interval range of the calculation interval. ex: 60:120 or seq(60:120, by=0.1) for the number of turns if the parameter is F
+#' @param parameter the value to provide the quantity of interest value
 #'
-#' @return a list of values according the estimator on the whole range of interval calculation
+#' @return a numeric
 #' @export
 #'
-#' @examples evalEstimator2(CS[3], 125, c(60, 120))
+#' @examples
+#' evalEstimator2(COEFSL, 524)
 #'
-evalEstimator2<-function(matrice, param, interval){
+evalEstimator2<-function(coefs, parameter){
 
-  MATRICE <- matrix(unlist(matrice), ncol = 3, byrow = FALSE)
+  Y<-function(y) { coefs[1] + coefs[2] * y + coefs[3] * y^2}
 
-  x<- param
-
-  c<-MATRICE[,1]
-  b<-MATRICE[,2]
-  a<-MATRICE[,3]
-
-  C<-c[1] + c[2]* x + c[3]* x^2
-  B<-b[1] + b[2]* x + b[3]* x^2
-  A<-a[1] + a[2]* x + a[3]* x^2
-
-
-  Y<-function(y) { C + B * y + A * y^2}
-
-  return(Y(interval))
+  return(Y(parameter))
 
 }

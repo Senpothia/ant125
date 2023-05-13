@@ -2,18 +2,18 @@
 #' Data analyse and antenna parameters estimation.Provide N tours according an inductance value or a antenna current selected.
 #'Provide resonant capacitance according an inductance value estimated.
 #'
-#' @param data The data file to be processed
+#' @param data The data file to be processed. The must be save with csv extention.
 #'
 #' @return parameters like N, L, C for antenna design
 #' @export
 #'
 #' @examples
-#' analyse()
+#' analyse("data")
 #'
 analyse<-function(data){
 
   TAB<-getMeasures("data")
-  CS<-regMods("data")
+
 
   cap<-""
   Iantenne<-""
@@ -48,8 +48,8 @@ analyse<-function(data){
       print("Inductance attendue en mH: ")
       Latt<-Lattendue(Cacc, 125)
       print(Latt)
-
-      n<-optimisEst(CS[4], Latt, 125, c(60,120))
+      COEFSL<-extModels(TAB, 125, TRUE, FALSE)
+      n<-optimisEst(COEFSL, Latt, c(60,120))
 
       #--------------------------------------------------------------------------------
 
@@ -90,14 +90,14 @@ analyse<-function(data){
       insight::print_color("------------------------------------------------\n", "red")
 
       Rattendue<-as.numeric(r[1])
-
-      n<-optimisEst(CS[3], Rattendue, 125, c(60,120))
+      COEFSR<-extModels(TAB, 125, FALSE, FALSE)
+      n<-optimisEst(COEFSR, Rattendue, c(60,120))
 
       insight::print_color( paste("Nombre de spires estimés: ", as.character(n[1])), "red")
       insight::print_color("\n","red")
       insight::print_color("------------------------------------------------\n", "red")
 
-      Lcal<-evalEstimator2(CS[3], 125, as.numeric(n[1]))
+      Lcal<-evalEstimator2(COEFSL, as.numeric(n[1]))
 
       insight::print_color(paste("Inductance antenne: ", Lcal), "red")
       insight::print_color("\n","red")

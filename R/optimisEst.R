@@ -2,10 +2,10 @@
 #' Returns the value of the abcissa of the N or F estimator which provides the value of the quantity
 #' of interest: L or R
 #'
-#' @param matrice matrix of parameters provided by:  CS<-regMods("data")
+#'
 #' @param value expected value of the quantity of interest
-#' @param param parameter of the model coefficients. ex: 125kHz
 #' @param interval
+#' @param coefs estimated parameters of the model
 #'
 #' @return
 #' @export
@@ -13,22 +13,9 @@
 #' @examples
 #' m<-optimisEst(CS[4], 2000, 125, c(60, 120)
 #'
-optimisEst<-function(matrice, value, param, interval){
+optimisEst<-function(coefs, value, interval){
 
-  MATRICE <- matrix(unlist(matrice), ncol = 3, byrow = FALSE)
-
-  x<- param
-
-  c<-MATRICE[,1]
-  b<-MATRICE[,2]
-  a<-MATRICE[,3]
-
-  C<-c[1] + c[2]* x + c[3]* x^2
-  B<-b[1] + b[2]* x + b[3]* x^2
-  A<-a[1] + a[2]* x + a[3]* x^2
-
-
-  Y<-function(y) { abs(C + B * y + A * y^2 - value) }
+  Y<-function(y) { abs(coefs[1] + coefs[2] * y + coefs[3] * y^2 - value) }
   minus<-optimize(Y, interval)
   return(minus)
 

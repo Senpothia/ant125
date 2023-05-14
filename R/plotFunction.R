@@ -1,4 +1,4 @@
-#' Plot a function
+#' Plots a function
 #'
 #' @param func the function to plot given in string form
 #' @param xm minimum value of the interval of representatiion

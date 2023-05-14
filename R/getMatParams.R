@@ -1,8 +1,8 @@
 
-#' Convert the list of parameters of a group into a matrix of parameters listed in columns
+#' Converts the list of parameters of a group into a matrix of parameters listed in columns
 #'
 #' @param coef
-#' list from getParams()for one of the groups: RN, LN, RF, LF
+#' list from getParams() for one of the groups: RN, LN, RF, LF
 #'
 #' @return a matrix of the linear model
 #' @export

@@ -1,8 +1,9 @@
 
-#' Data analyse and antenna parameters estimation.Provide N tours according an inductance value or a antenna current selected.
+#'Data analyse and antenna parameters estimation.Provide N turns according an inductance value or a antenna current selected.
 #'Provide resonant capacitance according an inductance value estimated.
+#'Given the inductance antenna based on the number of turns estimated and antenna current required
 #'
-#' @param data The data file to be processed. The must be save with csv extention.
+#' @param data The data file to be processed. The file must be save with csv extention.
 #'
 #' @return parameters like N, L, C for antenna design
 #' @export
@@ -13,7 +14,6 @@
 analyse<-function(data){
 
   TAB<-getMeasures("data")
-
 
   cap<-""
   Iantenne<-""
@@ -28,17 +28,13 @@ analyse<-function(data){
 
     }else{
 
-
       # Estimation en fonction de la capacité d'accord
-
 
       # convert character into integer
       cap2 <- as.integer(cap)*1e-12
 
       print("Valeur de capacité entrée: ")
       print(cap2)
-
-      # c2<-(39e-12*1.5e-9)/(39e-12+1.5e-9)  # Influence pont capacitif
 
       Cacc<-(cap2)+env$c2
 

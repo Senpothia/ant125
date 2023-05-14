@@ -2,7 +2,7 @@
 % Please edit documentation in R/getAllGraphs.R
 \name{getAllGraphs}
 \alias{getAllGraphs}
-\title{Provides the set of cumulative graphs with insertion of the simulated curve}
+\title{Provides two sets of cumulative graphs with insertion of the simulated curve}
 \usage{
 getAllGraphs(data, param)
 }
@@ -15,9 +15,9 @@ getAllGraphs(data, param)
 plots of quantities of interest
 }
 \description{
-Provides the set of cumulative graphs with insertion of the simulated curve
+Provides two sets of cumulative graphs with insertion of the simulated curve
 }
 \examples{
-getAllGraphs("data", 125)
-getAllGraphs("data", 125)
+TAB<-getMeasures("ant046")
+getAllGraphs(TAB, 125)
 }

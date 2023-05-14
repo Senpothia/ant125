@@ -1,6 +1,6 @@
 
 
-#' Provide a list of linear models for a group of data: LN, RN, LF, RF
+#' Provides a list of linear models for a group of data: LN, RN, LF, RF
 #' To be call based on a group
 #'
 #' @param models made of 4 groups:LN, RN, LF, RF
@@ -16,11 +16,7 @@
 estimators<-function(models, groupe){
   EST<-list()
 
-  # groupes: LN, RN, LF, RF
-  # models: liste de tous les models d'après le jeu de données traité
   noms<-c()
-  # noms1<-c("F=10", "F=20", "F=28.5", "F=40", "F=50", "F=66.6", "F=100")
-  # noms2<-c("N=60", "N=80", "N=100", "N=120")
 
   if(groupe == "LN"){
 

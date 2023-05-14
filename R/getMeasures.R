@@ -1,6 +1,6 @@
 
 
-# Load data file for measurements and factors corrections
+# Loads data file for measurements and factors corrections
 
 #' Loads data from file. The file must be located on the appropriate folder. The folder must be named data and placed at the root
 #' of the project folder
@@ -38,7 +38,7 @@ getMeasures<-function(file){
     }
   )
 
-  env$frequencies<-sort(unique(TAB$F))     # Liste des fréquences
+  env$frequencies<-sort(unique(TAB$F))
   env$echs<-sort(unique(TAB$ech))
   env$turns<-sort(unique(TAB$N))
   namesFreq<-c()

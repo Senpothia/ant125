@@ -16,7 +16,7 @@ Iant<-function(x){  # En milliampères
 }
 
 
-#' Optimise the value of the antenna resistance given a current antenna value
+#' Optimises the value of the antenna resistance given a current antenna value
 #'
 #' @param I
 #'
@@ -70,7 +70,7 @@ In<-function(N, Restimator){
 
 
 
-#' Evaluate the antenna magnetic field based on the antenna resistance estimator and the number of turns
+#' Evaluates the antenna magnetic field based on the antenna resistance estimator and the number of turns
 #'
 #' @param N number of turns
 #' @param Restimator an estiamtor of the antenna resistance obtained from the regression coefficients and given in string form
@@ -90,7 +90,7 @@ Best<-function(N, Restimator){
 }
 
 
-#' Evaluate the number of turns for peak value of the antenna magnetic field
+#' Evaluates the number of turns for peak value of the antenna magnetic field
 #'
 #' @param matrice Matrix of coefficents for antenna resistance estimator
 #' @param param the value of the frequency for evaluation of the resistance antenna estimator
@@ -126,7 +126,7 @@ getMaxBest<-function(matrice, param, interval){
 }
 
 
-#' Evaluate the number of turns for peak value of the antenna current
+#' Evaluates the number of turns for peak value of the antenna current
 #'
 #' @param matrice Matrix of coefficents for antenna resistance estimator
 #' @param param the value of the frequency for evaluation of the resistance antenna estimator
@@ -224,7 +224,7 @@ Vant<-function(N, R, L){
 }
 
 
-#' Provide antenna voltage given the number of turns, the resistance and inductance value of the antenna
+#' Provides antenna voltage given the number of turns, the resistance and inductance value of the antenna
 #'
 #' @param N number of turns
 #' @param R antenna resistance in Ohm
@@ -264,7 +264,7 @@ Fres<-function(L,C){
 }
 
 
-#'Evaluate the inductance in mH for the resonance at the frequency F given in kHz and the capacitance C given in pF
+#'Evaluates the inductance in mH for the resonance at the frequency F given in kHz and the capacitance C given in pF
 #'
 #' @param C capacitance value in pF
 #'

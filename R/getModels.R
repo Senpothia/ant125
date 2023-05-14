@@ -1,5 +1,4 @@
 
-
 #' Provides a list of all RN, LN, RF, LF model lists
 #'
 #' @param TAB Data frame representing the measurements provided by getMeasures function

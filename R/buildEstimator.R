@@ -1,5 +1,5 @@
 
-#' Build an estimator based on the matrix of regression coefficient depending on a parameter value
+#' Builds an estimator based on the matrix of regression coefficients depending on a parameter value
 #'
 #' @param matrice  matrix of regression coefficients
 #' @param param value of the parameter. ex: F=125. The frequencies are indicated in kHz

@@ -14,8 +14,6 @@
 #'
 plotGroups<-function(data, groupe, estimation, param){
 
-  #TODO: ajouter traitement de l'extension du data.frame aux valeurs de evalEstimator2
-
   echs<-sort(unique(data$ech))
   frequencies<-sort(unique(data$F))     # Liste des fréquences
   nTypes<-sort(unique(data$N))

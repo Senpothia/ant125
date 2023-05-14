@@ -6,7 +6,7 @@
 # matrice= CS[1]
 # intervalle: vecteurs de l'intervalle de mesures. En rapport avec points de mesures: frequencies ou nTypes
 # ex:intervalle=c(60,120) pour groupes xN ou intervalle=c(10, 100) pour les groupes xF
-# Supprimer les graphes existants si les nouveaux ne sont pas enregsitrés dans le repertoire de sauvegarde.
+# Supprimer les graphes existants si les nouveaux ne sont pas enregistrés dans le repertoire de sauvegarde.
 # Sinon fermer Rstudio et relancer
 
 #' Plots the regression curves for the model coefficients: RN, LN, RF, or LF

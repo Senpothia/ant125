@@ -5,13 +5,16 @@
 #'
 #' @param value expected value of the quantity of interest
 #' @param interval
-#' @param coefs estimated parameters of the model
+#' @param coefs estimated parameters of the model from extModels function
 #'
 #' @return
 #' @export
 #'
 #' @examples
-#' m<-optimisEst(CS[4], 2000, 125, c(60, 120)
+#'
+#' TAB<-getMeasures("ant046")
+#' COEFS<-extModels(TAB, 125, FALSE, TRUE)
+#' m<-optimisEst(COEFS, 25, c(60, 120)
 #'
 optimisEst<-function(coefs, value, interval){
 

@@ -1,5 +1,5 @@
 
-#' Deduce models on the parameters from a matrix of parameters
+#' Deduces models on the parameters from a matrix of parameters
 #'
 #' @param matrice matrix from a group RN, RL, LN, or LF via getMatParams()
 #' @param abscisse vector of the values of frequencies F or number of turns N which were used for the measurements

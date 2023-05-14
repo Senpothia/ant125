@@ -1,11 +1,11 @@
-#' Extrapole the value of the inductance or resistance for a given frequency based on the measurements recorded
+#' Extrapoles the value of the inductance or resistance for a given frequency based on the measurements recorded
 #'
-#' @param parameter the frequency in kHz used for extrapole the models of inductance or resistance antenna
-#' @param inductance boolean. If TRUE the inductance for the parameter value is estimated, if FALSE, the resistance is evaluated
-#' @param data data.frame representing data
+#' @param parameter the frequency in kHz used for extrapolate the models of inductance or resistance antenna
+#' @param inductance boolean. If TRUE the inductance for the parameter value is estimated, if FALSE, the resistance is estimated.
+#' @param data data frame representing data
 #' @param plots boolean. Enable plots
 #'
-#' @return the coefficients of the extrapoled model for the antenna inductance or the resistance
+#' @return the coefficients of the extrapolated model for the antenna inductance or the resistance
 #' @export
 #'
 #' @examples

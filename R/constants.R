@@ -34,7 +34,6 @@ setDataSource<-function(source){
 }
 
 #' Set the reference frequency for estimations. Usely this parameter is set as 125
-#' as 125kHz
 #'
 #' @param freq The reference frequency in kHz
 #'

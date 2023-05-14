@@ -3,7 +3,7 @@
 #
 #' @param coefs estimated coefficients of the model
 #'
-#' @param parameter the value to provide the quantity of interest value
+#' @param abscisse the value to provide the quantity of interest value
 #'
 #' @return a numeric
 #' @export
@@ -11,10 +11,10 @@
 #' @examples
 #' evalEstimator2(COEFSL, 524)
 #'
-evalEstimator2<-function(coefs, parameter){
+evalEstimator2<-function(coefs, abscisse){
 
   Y<-function(y) { coefs[1] + coefs[2] * y + coefs[3] * y^2}
 
-  return(Y(parameter))
+  return(Y(abscisse))
 
 }

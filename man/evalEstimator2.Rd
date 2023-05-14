@@ -4,12 +4,12 @@
 \alias{evalEstimator2}
 \title{Executes the calculation of the values of the quantity of interest according to the estimator coefficients}
 \usage{
-evalEstimator2(coefs, parameter)
+evalEstimator2(coefs, abscisse)
 }
 \arguments{
 \item{coefs}{estimated coefficients of the model}
 
-\item{parameter}{the value to provide the quantity of interest value}
+\item{abscisse}{the value to provide the quantity of interest value}
 }
 \value{
 a numeric

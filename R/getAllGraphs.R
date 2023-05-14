@@ -1,38 +1,44 @@
 
-#' Provides the set of cumulative graphs with insertion of the simulated curve
+#' Provides two sets of cumulative graphs with insertion of the simulated curve
 #'
-#' @param params list of parameter values
-#' @param file name of the file to be processed given as a string
+#' @param params value of the frequency estimation in kHz, e.g: 125
+#' @param file name of the file to be processed given as a string. The file must have csv extention
 #'
 #' @return plots of quantities of interest
 #' @export
 #'
 #' @examples
-#' getAllGraphs("data", c(110, 110, 125, 90))
-#' getAllGraphs("data", c(N1, N2, F1, F2))
-getAllGraphs<-function(file, params){
+#' TAB<-getMeasures("ant046")
+#' getAllGraphs(TAB, 125)
 
-  TAB<-getMeasures(file)
+getAllGraphs<-function(data, param){
 
-  frequencies<-sort(unique(TAB$F))     # Liste des fréquences
-  echs<-sort(unique(TAB$ech))
-  nTypes<-sort(unique(TAB$N))
+  COEFSL<-extModels(data, param, TRUE, FALSE)
+  COEFSR<-extModels(data, param, FALSE, FALSE)
 
-  CS<-regMods(file)
+  newEch<-max(env$echs) + 1
+  new_row<-c()
 
-  YY<-evalEstimator2(CS[1], params[1], frequencies) #LF; param: N
-  plotGroups(TAB, "LF", YY, params[1]) #LF
+  estimationsL<-evalEstimator2(COEFSL, env$turns)
+  estimationsR<-evalEstimator2(COEFSR, env$turns)
+
+  i<-1
+
+  for(n in env$turns){
+
+    new_row = c(echs=newEch, N=n, F=param, L=estimationsL[i], R=estimationsR[i])
+    data<-rbind(data, new_row)
+    i<-i+1
+  }
+
+  print(data)
 
 
-  YY<-evalEstimator2(CS[2], params[2], frequencies) #RF; param: N
-  plotGroups(TAB, "RF", YY, params[2]) #LF
+  p1 <- ggplot2::ggplot(data, ggplot2::aes(x=N, y=L, colour=as.factor(F), group=F)) + ggplot2::geom_point() + ggplot2::geom_smooth(method=lm, formula = y ~ poly(x, 2), se=FALSE) + ggplot2::ggtitle(paste("Inductance vs N - pamamètre simulé: F=", as.character(param))) + ggplot2::labs(x = "N - Tours", y = "Inductance - mH", color="F")
+  p2 <- ggplot2::ggplot(data, ggplot2::aes(x=N, y=R, colour=as.factor(F), group=F)) + ggplot2::geom_point() + ggplot2::geom_smooth(method=lm, formula = y ~ poly(x, 2), se=FALSE) + ggplot2::ggtitle(paste("Résistance vs N - Paramètre simulé: F=", as.character(param) )) + ggplot2::labs(x = "N - Tours", y = "Résistance - Ohms", color="F")
 
+  print(p1)
+  print(p2)
 
-  YY<-evalEstimator2(CS[3],params[3], nTypes) #RN; param: F
-  plotGroups(TAB, "RN", YY, params[3]) #RN
-
-
-  YY<-evalEstimator2(CS[4],params[4], nTypes) #LN; param: F
-  plotGroups(TAB, "LN", YY, params[4]) #LN
 
 }

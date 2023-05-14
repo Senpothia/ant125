@@ -4,12 +4,12 @@
 \alias{getAllGraphs}
 \title{Provides the set of cumulative graphs with insertion of the simulated curve}
 \usage{
-getAllGraphs(file, params)
+getAllGraphs(data, param)
 }
 \arguments{
-\item{file}{name of the file to be processed given as a string}
+\item{params}{value of the frequency estimation in kHz, e.g: 125}
 
-\item{params}{list of parameter values}
+\item{file}{name of the file to be processed given as a string. The file must have csv extention}
 }
 \value{
 plots of quantities of interest
@@ -18,6 +18,6 @@ plots of quantities of interest
 Provides the set of cumulative graphs with insertion of the simulated curve
 }
 \examples{
-getAllGraphs("data", c(110, 110, 125, 90))
-getAllGraphs("data", c(N1, N2, F1, F2))
+getAllGraphs("data", 125)
+getAllGraphs("data", 125)
 }

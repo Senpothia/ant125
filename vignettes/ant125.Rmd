@@ -156,15 +156,33 @@ summaryEnv()
 
 ## Modification des constantes
 
+Les fonctions permettant de modifier la valeurs des constantes sont de la forme: setConstante().
+Elles prennent pour paramètre la nouvelle valeur à affecter à la constante. 
+
+On peut citer par exemple:
+````
+setVdd(): modification de la tension d'alimentation
+setVss(): modification de la référence de tension
+setR(): modification du rayon d'antennne
+setZ(): modification de la distance de référence pour le champ magnétique
+setRad(): modification de la résistance de sortie du driver d'antenne 
+setRser(): modification de la résistance série d'antenne
+SetCdv(), setCdv2(): modification des capacités du pont capacitif
+setRefFrequency(): modifcation de la fréquence de référence
+
+
+````
 
 ## Evaluation des modèles
 
 
 
-## Fonctions de répréentation des données
+## Fonctions de réprésentation des données
 
 
-## Fonctions d'analyse
+## Fonctions d'analyse de données
+
+
  
  
 

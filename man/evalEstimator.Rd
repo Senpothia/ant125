@@ -2,18 +2,18 @@
 % Please edit documentation in R/evalEstimator.R
 \name{evalEstimator}
 \alias{evalEstimator}
-\title{Provide the quantity of interest values based on an estimator}
+\title{Provides the quantity of interest values based on an estimator}
 \usage{
 evalEstimator(estimator, param, interval, titre = "", labX = "", labY = "")
 }
 \arguments{
 \item{estimator}{estimator given as a string}
 
-\item{param}{parameter value. e.g: F=125. freqencies are given in kHz}
+\item{param}{parameter value. e.g: F=125. frequencies are given in kHz}
 
 \item{interval}{range of the calculation interval. e.g: 60:120 ou seq(60:120, by=0.1) for the number of turns, or 10:100 if the parameter is the frequency}
 
-\item{titre}{titre du graphe produit - optionnel}
+\item{titre}{title of the graph produced - optional}
 
 \item{labX}{label axis x - optional}
 
@@ -23,5 +23,5 @@ evalEstimator(estimator, param, interval, titre = "", labX = "", labY = "")
 a numeric
 }
 \description{
-Provide the quantity of interest values based on an estimator
+Provides the quantity of interest values based on an estimator
 }

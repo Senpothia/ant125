@@ -2,7 +2,7 @@
 % Please edit documentation in R/rfid.R
 \name{Lattendue}
 \alias{Lattendue}
-\title{Evaluate the inductance in mH for the resonance at the frequency F given in kHz and the capacitance C given in pF}
+\title{Evaluates the inductance in mH for the resonance at the frequency F given in kHz and the capacitance C given in pF}
 \usage{
 Lattendue(C, F)
 }
@@ -10,7 +10,7 @@ Lattendue(C, F)
 \item{C}{capacitance value in pF}
 }
 \description{
-Evaluate the inductance in mH for the resonance at the frequency F given in kHz and the capacitance C given in pF
+Evaluates the inductance in mH for the resonance at the frequency F given in kHz and the capacitance C given in pF
 }
 \examples{
 Lattendue(980e-12, 125)

@@ -2,16 +2,16 @@
 % Please edit documentation in R/getMatParams.R
 \name{getMatParams}
 \alias{getMatParams}
-\title{Convert the list of parameters of a group into a matrix of parameters listed in columns}
+\title{Converts the list of parameters of a group into a matrix of parameters listed in columns}
 \usage{
 getMatParams(coef)
 }
 \arguments{
-\item{coef}{list from getParams()for one of the groups: RN, LN, RF, LF}
+\item{coef}{list from getParams() for one of the groups: RN, LN, RF, LF}
 }
 \value{
 a matrix of the linear model
 }
 \description{
-Convert the list of parameters of a group into a matrix of parameters listed in columns
+Converts the list of parameters of a group into a matrix of parameters listed in columns
 }

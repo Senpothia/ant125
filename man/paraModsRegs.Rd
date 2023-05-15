@@ -2,7 +2,7 @@
 % Please edit documentation in R/paraModsRegs.R
 \name{paraModsRegs}
 \alias{paraModsRegs}
-\title{Deduce models on the parameters from a matrix of parameters}
+\title{Deduces models on the parameters from a matrix of parameters}
 \usage{
 paraModsRegs(matrice, abscisse)
 }
@@ -13,5 +13,5 @@ paraModsRegs(matrice, abscisse)
 abscisse is the parameter of the studied curve network: F for RN, LN; N for RF, LF}
 }
 \description{
-Deduce models on the parameters from a matrix of parameters
+Deduces models on the parameters from a matrix of parameters
 }

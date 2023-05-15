@@ -8,7 +8,7 @@ of interest: L or R}
 optimisEst(coefs, value, interval)
 }
 \arguments{
-\item{coefs}{estimated parameters of the model}
+\item{coefs}{estimated parameters of the model from extModels function}
 
 \item{value}{expected value of the quantity of interest}
 }
@@ -17,6 +17,9 @@ Returns the value of the abcissa of the N or F estimator which provides the valu
 of interest: L or R
 }
 \examples{
-m<-optimisEst(CS[4], 2000, 125, c(60, 120)
+
+TAB<-getMeasures("ant046")
+COEFS<-extModels(TAB, 125, FALSE, TRUE)
+m<-optimisEst(COEFS, 25, c(60, 120)
 
 }

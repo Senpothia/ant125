@@ -1,8 +1,8 @@
 
 #' Provides two sets of cumulative graphs with insertion of the simulated curve
 #'
-#' @param params value of the frequency estimation in kHz, e.g: 125
-#' @param file name of the file to be processed given as a string. The file must have csv extention
+#' @param data data frame representing the measurements to analyse provided by the function getMeasures based on the data file with csv extention
+#' @param param the frequency value in kHz for extrapolations.
 #'
 #' @return plots of quantities of interest
 #' @export

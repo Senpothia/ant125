@@ -2,7 +2,7 @@
 % Please edit documentation in R/estimators.R
 \name{estimators}
 \alias{estimators}
-\title{Provide a list of linear models for a group of data: LN, RN, LF, RF
+\title{Provides a list of linear models for a group of data: LN, RN, LF, RF
 To be call based on a group}
 \usage{
 estimators(models, groupe)
@@ -16,7 +16,7 @@ estimators(models, groupe)
 a list of models: LN, RN, LF, LF
 }
 \description{
-Provide a list of linear models for a group of data: LN, RN, LF, RF
+Provides a list of linear models for a group of data: LN, RN, LF, RF
 To be call based on a group
 }
 \examples{

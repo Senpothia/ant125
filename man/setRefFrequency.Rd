@@ -2,8 +2,7 @@
 % Please edit documentation in R/constants.R
 \name{setRefFrequency}
 \alias{setRefFrequency}
-\title{Set the reference frequency for estimations. Usely this parameter is set as 125
-as 125kHz}
+\title{Set the reference frequency for estimations. Usely this parameter is set as 125}
 \usage{
 setRefFrequency(freq)
 }
@@ -15,7 +14,6 @@ nothing
 }
 \description{
 Set the reference frequency for estimations. Usely this parameter is set as 125
-as 125kHz
 }
 \examples{
 setRefFrequency(125)

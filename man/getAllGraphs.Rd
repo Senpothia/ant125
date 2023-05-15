@@ -7,9 +7,9 @@
 getAllGraphs(data, param)
 }
 \arguments{
-\item{params}{value of the frequency estimation in kHz, e.g: 125}
+\item{data}{data frame representing the measurements to analyse provided by the function getMeasures based on the data file with csv extention}
 
-\item{file}{name of the file to be processed given as a string. The file must have csv extention}
+\item{param}{the frequency value in kHz for extrapolations.}
 }
 \value{
 plots of quantities of interest

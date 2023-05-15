@@ -18,7 +18,7 @@ Iant<-function(x){  # En milliampères
 
 #' Optimises the value of the antenna resistance given a current antenna value
 #'
-#' @param I
+#' @param I expected antenna current in mA
 #'
 #' @return
 #' @export
@@ -26,14 +26,14 @@ Iant<-function(x){  # En milliampères
 #' @examples
 #'
 RforI<-function(I){
-  rx<-function(x){abs(Iant(x) - I)}
-  r<-optimize(rx, c(0, 10000))
+  rx<-function(x){abs(IantA(x) - I)}
+  r<-optimize(rx, c(0, 100000))
   return (r)
 }
 
 
 
-#' Calculation of the antenna current in mA
+#' Calculation of the antenna current in ampers
 #'
 #' @param R antenna resistance
 #'
@@ -278,5 +278,25 @@ Fres<-function(L,C){
 Lattendue<- function(C, F) {
 
   return(1e3/ (2*pi*F*1000)^2/C)
+
+}
+
+
+
+#' Title
+#'
+#' @param TAB
+#'
+#' @return
+#' @export
+#'
+#' @examples
+plotI<-function(TAB){
+
+  R<-function(N){COEFSR[1] + COEFSR[2]*N + COEFSR[3]*N^2}
+  Ra<-R(env$turns)
+  In<-Iant(Ra)
+  p<-plot(env$turns,In, type = "l", col="blue")
+  return(p)
 
 }

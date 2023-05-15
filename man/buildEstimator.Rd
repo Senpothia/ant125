@@ -2,7 +2,7 @@
 % Please edit documentation in R/buildEstimator.R
 \name{buildEstimator}
 \alias{buildEstimator}
-\title{Build an estimator based on the matrix of regression coefficient depending on a parameter value}
+\title{Builds an estimator based on the matrix of regression coefficients depending on a parameter value}
 \usage{
 buildEstimator(matrice, param)
 }
@@ -15,7 +15,7 @@ buildEstimator(matrice, param)
 a string representing the estimator for the parameter value given as parameter
 }
 \description{
-Build an estimator based on the matrix of regression coefficient depending on a parameter value
+Builds an estimator based on the matrix of regression coefficients depending on a parameter value
 }
 \examples{
 buildEstimator(CS[3], 125)

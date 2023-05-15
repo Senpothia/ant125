@@ -2,24 +2,24 @@
 % Please edit documentation in R/extModels.R
 \name{extModels}
 \alias{extModels}
-\title{Extrapole the value of the inductance or resistance for a given frequency based on the measurements recorded}
+\title{Extrapoles the value of the inductance or resistance for a given frequency based on the measurements recorded}
 \usage{
 extModels(data, parameter, inductance, plots)
 }
 \arguments{
-\item{data}{data.frame representing data}
+\item{data}{data frame representing data}
 
-\item{parameter}{the frequency in kHz used for extrapole the models of inductance or resistance antenna}
+\item{parameter}{the frequency in kHz used for extrapolate the models of inductance or resistance antenna}
 
-\item{inductance}{boolean. If TRUE the inductance for the parameter value is estimated, if FALSE, the resistance is evaluated}
+\item{inductance}{boolean. If TRUE the inductance for the parameter value is estimated, if FALSE, the resistance is estimated.}
 
 \item{plots}{boolean. Enable plots}
 }
 \value{
-the coefficients of the extrapoled model for the antenna inductance or the resistance
+the coefficients of the extrapolated model for the antenna inductance or the resistance
 }
 \description{
-Extrapole the value of the inductance or resistance for a given frequency based on the measurements recorded
+Extrapoles the value of the inductance or resistance for a given frequency based on the measurements recorded
 }
 \examples{
 

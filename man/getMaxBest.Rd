@@ -2,7 +2,7 @@
 % Please edit documentation in R/rfid.R
 \name{getMaxBest}
 \alias{getMaxBest}
-\title{Evaluate the number of turns for peak value of the antenna magnetic field}
+\title{Evaluates the number of turns for peak value of the antenna magnetic field}
 \usage{
 getMaxBest(matrice, param, interval)
 }
@@ -17,5 +17,5 @@ getMaxBest(matrice, param, interval)
 the number of turn to achieve to peak value of the antenna magnetic field
 }
 \description{
-Evaluate the number of turns for peak value of the antenna magnetic field
+Evaluates the number of turns for peak value of the antenna magnetic field
 }

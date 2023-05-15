@@ -2,20 +2,22 @@
 % Please edit documentation in R/analyse.R
 \name{analyse}
 \alias{analyse}
-\title{Data analyse and antenna parameters estimation.Provide N tours according an inductance value or a antenna current selected.
-Provide resonant capacitance according an inductance value estimated.}
+\title{Data analyse and antenna parameters estimation.Provide N turns according an inductance value or a antenna current selected.
+Provide resonant capacitance according an inductance value estimated.
+Given the inductance antenna based on the number of turns estimated and antenna current required}
 \usage{
 analyse(data)
 }
 \arguments{
-\item{data}{The data file to be processed. The must be save with csv extention.}
+\item{data}{The data file to be processed. The file must be save with csv extention.}
 }
 \value{
 parameters like N, L, C for antenna design
 }
 \description{
-Data analyse and antenna parameters estimation.Provide N tours according an inductance value or a antenna current selected.
+Data analyse and antenna parameters estimation.Provide N turns according an inductance value or a antenna current selected.
 Provide resonant capacitance according an inductance value estimated.
+Given the inductance antenna based on the number of turns estimated and antenna current required
 }
 \examples{
 analyse("data")

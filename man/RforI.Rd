@@ -2,13 +2,13 @@
 % Please edit documentation in R/rfid.R
 \name{RforI}
 \alias{RforI}
-\title{Optimise the value of the antenna resistance given a current antenna value}
+\title{Optimises the value of the antenna resistance given a current antenna value}
 \usage{
 RforI(I)
 }
 \arguments{
-\item{I}{}
+\item{I}{expected antenna current in mA}
 }
 \description{
-Optimise the value of the antenna resistance given a current antenna value
+Optimises the value of the antenna resistance given a current antenna value
 }

@@ -2,7 +2,7 @@
 % Please edit documentation in R/rfid.R
 \name{IantA}
 \alias{IantA}
-\title{Calculation of the antenna current in mA}
+\title{Calculation of the antenna current in ampers}
 \usage{
 IantA(R)
 }
@@ -10,5 +10,5 @@ IantA(R)
 \item{R}{antenna resistance}
 }
 \description{
-Calculation of the antenna current in mA
+Calculation of the antenna current in ampers
 }

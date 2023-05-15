@@ -2,7 +2,7 @@
 % Please edit documentation in R/rfid.R
 \name{getMaxIest}
 \alias{getMaxIest}
-\title{Evaluate the number of turns for peak value of the antenna current}
+\title{Evaluates the number of turns for peak value of the antenna current}
 \usage{
 getMaxIest(matrice, param, interval)
 }
@@ -17,5 +17,5 @@ getMaxIest(matrice, param, interval)
 the number of turn to achieve to peak value of the antenna current
 }
 \description{
-Evaluate the number of turns for peak value of the antenna current
+Evaluates the number of turns for peak value of the antenna current
 }

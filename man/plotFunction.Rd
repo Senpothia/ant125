@@ -2,7 +2,7 @@
 % Please edit documentation in R/plotFunction.R
 \name{plotFunction}
 \alias{plotFunction}
-\title{Plot a function}
+\title{Plots a function}
 \usage{
 plotFunction(func, xm, xM, main, xlab, ylab)
 }
@@ -20,7 +20,7 @@ plotFunction(func, xm, xM, main, xlab, ylab)
 \item{ylab}{label of axis y}
 }
 \description{
-Plot a function
+Plots a function
 }
 \examples{
 f<-"x^2 + 2*x +3"

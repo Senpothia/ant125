@@ -2,7 +2,7 @@
 % Please edit documentation in R/rfid.R
 \name{getVant}
 \alias{getVant}
-\title{Provide antenna voltage given the number of turns, the resistance and inductance value of the antenna}
+\title{Provides antenna voltage given the number of turns, the resistance and inductance value of the antenna}
 \usage{
 getVant(N, R, L)
 }
@@ -14,7 +14,7 @@ getVant(N, R, L)
 \item{L}{antenna inductance in Henry}
 }
 \description{
-Provide antenna voltage given the number of turns, the resistance and inductance value of the antenna
+Provides antenna voltage given the number of turns, the resistance and inductance value of the antenna
 }
 \examples{
 v<-getVant(70, 200, 1.6e-3)

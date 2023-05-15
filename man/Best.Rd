@@ -2,7 +2,7 @@
 % Please edit documentation in R/rfid.R
 \name{Best}
 \alias{Best}
-\title{Evaluate the antenna magnetic field based on the antenna resistance estimator and the number of turns}
+\title{Evaluates the antenna magnetic field based on the antenna resistance estimator and the number of turns}
 \usage{
 Best(N, Restimator)
 }
@@ -12,5 +12,5 @@ Best(N, Restimator)
 \item{Restimator}{an estiamtor of the antenna resistance obtained from the regression coefficients and given in string form}
 }
 \description{
-Evaluate the antenna magnetic field based on the antenna resistance estimator and the number of turns
+Evaluates the antenna magnetic field based on the antenna resistance estimator and the number of turns
 }

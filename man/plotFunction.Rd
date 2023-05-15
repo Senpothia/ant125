@@ -23,7 +23,8 @@ plotFunction(func, xm, xM, main, xlab, ylab)
 Plots a function
 }
 \examples{
-f<-"x^2 + 2*x +3"
-plotFunction(f, 0, 20, "title", "axis x name", "axis y name")
+f<-"X^2 + 2*X +3"
+p<-plotFunction(f, 0, 20, "title", "axis x name", "axis y name")
+print(p)
 
 }

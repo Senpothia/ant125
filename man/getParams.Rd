@@ -14,7 +14,7 @@ the coefficients sorted by degree}
 Sorting of parameters
 }
 \examples{
-TAB<-getMeasures("data", ",", ".")
+TAB<-getMeasures("ant046")
 MODS<-getModels(TAB)
 models<-getModparams(MODS, "RF")
 

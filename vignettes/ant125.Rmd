@@ -635,6 +635,18 @@ F=50   -0.13175238 0.004836190 0.0001778571
 F=66.6 -0.12159307 0.004360931 0.0001854004  
 F=100  -0.14816710 0.004499004 0.0001996104  
 
+La fonction **buidEstimator2** permet d'obtenir un estimateur à partir des coefficients d'une regression linéaire. L'estimateur est fourni sous forme de string.
+
+**Exemple:**
+
+COEFSR<-extModels(TAB, 125, FALSE, FALSE)  
+COEFSR  
+  (Intercept)       D$TOURS  I(D$TOURS^2)   
+-1.111015e+01  5.486599e-01  6.726538e-04   
+est<-buildEstimator2(COEFSR)  
+est  
+[1] "-11.1101508749832 + 0.548659893153332 * y + 0.000672653769955005 * y^2"  
+
 
 ## Fonctions de réprésentation des données
 
@@ -647,6 +659,29 @@ p<-plotFunction(f, 0, 20, "title", "axis x name", "axis y name")
 print(p)
 
 ![ ](plotFunction.png)
+
+##Representation du champ magnétique
+
+La representation du champ magnétique produit par l'antenne peut être obtenue de façon indirecte en par le biais de l'estimateur de la résistance d'antenne:
+
+COEFSR<-extModels(TAB, 125, FALSE, FALSE)  
+est<-buildEstimator2(COEFSR, N)  
+b<-Best(10:500, est)  
+plot(10:500, b)
+
+
+![ ](Best.png)
+
+##Representation du courant d'antenne
+
+COEFSR<-extModels(TAB, 125, FALSE, FALSE)  
+est<-buildEstimator2(COEFSR, "N") 
+I<-Iant(est)  
+plot(40:120, I, type="l", main="Courant d'antenne", xlab="Tours", ylab="Courant - mA", col="red")
+
+![ ](courant.png)
+
+
 
 ## Fonctions d'analyse de données
 

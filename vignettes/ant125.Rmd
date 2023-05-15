@@ -20,6 +20,7 @@ knitr::opts_chunk$set(
 ```{r setup, include = FALSE}
 library(ant125)
 ```
+\newpage
 
 # Introduction
 
@@ -55,14 +56,15 @@ La tension d'antenne est liée au factuer de qualité du système, lequel est d�
 $$Q = \frac{2\pi F L}{R}$$
 où F est la fréquence et R la résistance d'antennne
 
+\newpage
 # Présentation du tranceiver EM4095
+
 
 Le transceiver EM4095 est le circuit qui pilote l'antenne et qui se charge de la démodulation.
 
 ## schéma de principe
 
-![Fig 1 - Schéma de principe EM4095](principe.png)
-\newpage
+![Schéma de principe EM4095](principe.png)
 
 Dans ce schéma, il faut noter:
 ````
@@ -83,13 +85,87 @@ La tension d'antenne est donnée par la relation suivante:
 
 ![](Vant.png)
 
-# Présentation des fonctions
+# Types de fonctions proposées
 
-Le package **ant125** contient deux types de fonctions:
+Le package **ant125** contient trois types de fonctions:
 ````
 - les fonctions de calcul des estimateurs de paramètres
 - les fonctions de représentation des données
+- les fonctions de type script permettant de procéder à une analyse 
 ````
-
+\newpage
 
 # Recueil de mesures
+
+Pour être exploitable dans le package, le recueil de mesures doit respecter la forme standard présentée ci-après:
+
+
+![ ](recueil.png)
+ 
+ 
+ **Représentation des colonnes:**  
+ 
+ echs: numéro d'échantillon
+ N: nombre de spires de l'antenne  
+ F: fréquence de mesures en kHz  
+ L: inductance d'antenne mesurée en mH  
+ R: résistance d'antenne mesurée en Ohms  
+ 
+# Constantes du packages
+
+Les constantes du package représentent des valeurs de composants du schéma de principe tels que:
+````
+- les capacités du pont capacitif
+- la résistance série de limitation de courant d'antenne
+
+````
+ou des paramètres tels que :
+
+````
+- la fréquence de fonctionnement du système
+- la tension d'alimentation du système
+- la distance de référence pour l'estimation du champ magnétique
+- le diamètre de l'antenne
+- le dossier de sauvegarde les fichiers de mesures
+
+````
+
+La fonction **summaryEnv** permet de lister toutes les constantes et de connaître leur valeur.
+
+Une série de fonctions permet de modifier la valeur d'une constante.
+
+**Exemple:**
+
+summaryEnv()  
+[1] "--------------- CONSTANTES DE REFERENCES --------------------------------------------"  
+[1] "Fréquence de référence: 1e+05"  
+[1] "Localisation des  données: ./data/"  
+[1] "Tension d'alimentation Vdd: 5"  
+[1] "Référence de tension Vss: 0"  
+[1] "Résistance série Rser: 27"  
+[1] "Résistance de sortie driver antenne Rad: 9"  
+[1] "Distance de référence: 0.01"  
+[1] "Rayon d'antenne: 0.38"  
+[1] "Pont capacitif, Cdv1: 3.9e-11"  
+[1] "Pont capacitif, Cdv2: 1.5e-09"  
+[1] "Pont capacitif, capacité équivalente: 3.80116959064328e-11"  
+[1] "-------------------------------------------------------------------------------------"  
+
+
+# Présentation des fonctions
+
+## Modification des constantes
+
+
+## Evaluation des modèles
+
+
+
+## Fonctions de répréentation des données
+
+
+## Fonctions d'analyse
+ 
+ 
+
+ 

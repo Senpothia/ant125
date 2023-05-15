@@ -199,11 +199,12 @@ La fonction **getModels** permet d'obtenir la liste des modèles pour un groupe 
 -LF: groupe des inductances en fonction des frequences 
 
 ````
+
 **Exemple:**
 
-MODS<-getModels(TAB)
-MODS
-$MODSLF
+MODS<-getModels(TAB)  
+MODS  
+$MODSLF  
 $MODSLF$`N=40`
 
 Call:
@@ -530,12 +531,14 @@ Coefficients:
  -5.6080693    0.4234407    0.0004543  
 
 
-La fonction **getModParams** permet d'obtenir la liste des coefficients des modèles pour un groupe donné.
+La fonction **getModParams** permet d'obtenir l'ensemble des coefficients des modèles pour un groupe.
 
 **Exemple:**
 
-M<-getModels(TAB)  
-getModparams(M, "LN")  
+TAB<-getMeasures("ant046")
+MODS<-getModels(TAB)
+models<-getModparams(MODS, "RF")
+
 $LN
 $LN$MODSLN
 [1] -0.1052286
@@ -612,11 +615,38 @@ $LN$MODSLN
 $LN$MODSLN
 [1] 0.0001996104
 
+\newpage
+
+A partir de la liste des coefficients fournis par **getModParams**, il est possible des les mettre sous forme de matrice avec la fonction **getMatParams** pour en faciliter la lecture et la manipulation.
+
+**Exemple:**
+
+MODS<-getModels(TAB)  
+paramsLN<-getModparams(MODS, "LN")  
+matLN<-getMatParams(paramsLN)  
+matLN  
+
+               D0          D1           D2
+F=10   -0.10522857 0.004332619 0.0001751190  
+F=20   -0.11001385 0.004443139 0.0001750325  
+F=28.5 -0.10756017 0.004261602 0.0001775108  
+F=40   -0.09948139 0.003926147 0.0001817532  
+F=50   -0.13175238 0.004836190 0.0001778571  
+F=66.6 -0.12159307 0.004360931 0.0001854004  
+F=100  -0.14816710 0.004499004 0.0001996104  
 
 
 ## Fonctions de réprésentation des données
 
+Partant 'un estimateur exprimé sous forme de string, il est possible d'obtenir son graphe par la fonction **plotFunction**.
 
+**Exemple:**
+
+f<-"2*X+1"
+p<-plotFunction(f, 0, 20, "title", "axis x name", "axis y name")
+print(p)
+
+![ ](plotFunction.png)
 
 ## Fonctions d'analyse de données
 
@@ -637,14 +667,13 @@ Entrez la valeur de la capacité d'accord en pF: 980
 
 Optimisation pour F=125kHz et C= 980pF  
 Jeu de données utilisé:  ./data/  
-
 Nombre de spires estimés:  80.7160422062582  
 ------------------------------------------------  
 Entrez la valeur du courant d'antenne en mA: 80  
 Valeur du courant d'antenne choisie:  80 mA   
 Résistance estimée:  34.5774863088805   
 ------------------------------------------------  
-Nombre de spires estimés:  76.1601422019116  
+ Nombre de spires estimés:  76.1601422019116  
 ------------------------------------------------  
 Inductance antenne:  1.41878617661105  
 Capacité d'accord:  1.10461216454708e-09  

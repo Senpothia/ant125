@@ -11,14 +11,15 @@
 #' @export
 #'
 #' @examples
-#' f<-"x^2 + 2*x +3"
-#' plotFunction(f, 0, 20, "title", "axis x name", "axis y name")
+#' f<-"X^2 + 2*X +3"
+#' p<-plotFunction(f, 0, 20, "title", "axis x name", "axis y name")
+#' print(p)
 #'
 plotFunction<-function(func, xm, xM, main, xlab, ylab){
 
   X <- seq(xm, xM, by=1)
   fonction<-parse(text=func)
-  Y<-fonction<-eval(fonction)
+  Y<-eval(fonction)
 
   val <- data.frame(x = X, y = Y)
   p<-(

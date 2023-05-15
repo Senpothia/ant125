@@ -8,7 +8,7 @@
 #' @export
 #'
 #' @examples
-#' TAB<-getMeasures("data", ",", ".")
+#' TAB<-getMeasures("ant046")
 #' MODS<-getModels(TAB)
 #' models<-getModparams(MODS, "RF")
 #'

@@ -2,13 +2,18 @@
 % Please edit documentation in R/rfid.R
 \name{plotI}
 \alias{plotI}
-\title{Title}
+\title{Plot the antenna current vs Turns}
 \usage{
 plotI(TAB)
 }
 \arguments{
-\item{TAB}{}
+\item{TAB}{data frame representing the data}
 }
 \description{
-Title
+Plot the antenna current vs Turns
+}
+\examples{
+TAB<-getMeasures("ant046")
+plotI(TAB)
+
 }

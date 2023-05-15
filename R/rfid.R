@@ -283,14 +283,17 @@ Lattendue<- function(C, F) {
 
 
 
-#' Title
+#' Plot the antenna current vs Turns
 #'
-#' @param TAB
+#' @param TAB data frame representing the data
 #'
 #' @return
 #' @export
 #'
 #' @examples
+#' TAB<-getMeasures("ant046")
+#' plotI(TAB)
+#'
 plotI<-function(TAB){
 
   R<-function(N){COEFSR[1] + COEFSR[2]*N + COEFSR[3]*N^2}

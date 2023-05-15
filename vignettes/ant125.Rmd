@@ -195,10 +195,40 @@ Il est alors possible d'établir les relations liants les inductances et résist
 ## Fonctions de réprésentation des données
 
 
+
 ## Fonctions d'analyse de données
 
+La fonction **analyse** est un script permettant de déduire les paramètres d'antenne est fonction d'une valeur de courant d'antenne ou d'une capacité d'accord pré-établie.Cette fonction permet de représenter le courant d'antenne en  fonction du nombre de spires.
 
- 
+![ ](PlotIant.png)
+**Exemple d'analyse basée  sur le relevé ant046:**
+
+ analyse("ant046")   
+Entrez la valeur de la capacité d'accord en pF: 980   
+[1] "Valeur de capacité entrée: "   
+[1] 9.8e-10   
+[1] "Capacité d'accord réelle: "   
+[1] 1.592456 
+[1] "Inductance attendue en mH: " 
+[1] 1.592456 
+-------   RESULTAT D'OPTIMISATION    -----------  
+
+Optimisation pour F=125kHz et C= 980pF  
+Jeu de données utilisé:  ./data/  
+
+Nombre de spires estimés:  80.7160422062582  
+------------------------------------------------  
+Entrez la valeur du courant d'antenne en mA: 80  
+Valeur du courant d'antenne choisie:  80 mA   
+Résistance estimée:  34.5774863088805   
+------------------------------------------------  
+Nombre de spires estimés:  76.1601422019116  
+------------------------------------------------  
+Inductance antenne:  1.41878617661105  
+Capacité d'accord:  1.10461216454708e-09  
+-----------------  FIN DE RAPPORT  ------------  
+
+
  
 
  
